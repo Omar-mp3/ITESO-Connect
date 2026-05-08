@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Perfil - ITESO Connect</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="user-feed.html">
+        <span class="brand-badge">IC</span>
+        <strong>ITESO-Connect</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navPrincipal">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navPrincipal">
+        <ul class="navbar-nav ml-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link btn btn-gradient btn-sm px-3 text-white mr-lg-3" href="#" data-toggle="modal" data-target="#newPostModal">+ Nueva publicación</a>
+          </li>
+          <li class="nav-item px-2"><a class="nav-link" href="#" data-toggle="modal" data-target="#notificationsModal"><i class="fa fa-bell"></i></a></li>
+          <li class="nav-item px-2"><a class="nav-link" href="inbox.html"><i class="fa fa-comment"></i></a></li>
+          <li class="nav-item px-2"><a class="nav-link" href="profile.html"><i class="fa fa-user"></i></a></li>
+          <li class="nav-item pl-lg-3"><a class="nav-link text-danger" href="#">Cerrar sesión</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row">
+
+
+      <div class="col-md-4">
+        <div class="card mb-3">
+          <div class="card-body text-center">
+           
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Kanye_West_at_the_2009_Tribeca_Film_Festival_%28crop_2%29.jpg/250px-Kanye_West_at_the_2009_Tribeca_Film_Festival_%28crop_2%29.jpg" class="rounded-circle mb-2" width="100" height="100" alt="foto de perfil" style="object-fit: cover;">
+            <h5 class="card-title">Neguib Zayed Beltran Zuno</h5>
+            <p class="text-muted">@neguib.beltran</p>
+            <p class="card-text">Estudiante de Ing. en Sistemas en el ITESO</p>
+            <button class="btn btn-primary btn-sm btn-gradient">Seguir</button>
+            <button class="btn btn-secondary btn-sm btn-gradient">Mensaje</button>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            <h6 class="card-title">Informacion</h6>
+            <p class="card-text">Carrera: Ing. en Sistemas</p>
+            <p class="card-text">Universidad: ITESO</p>
+            <p class="card-text">Ciudad: Guadalajara</p>
+            <p class="card-text">Correo: neguib.beltran@iteso.mx</p>
+            <p class="card-text">Miembro desde: enero 2025</p>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            <h6 class="card-title">Seguidores</h6>
+            <p class="card-text">Seguidores: 248</p>
+            <p class="card-text">Siguiendo: 95</p>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            <h6 class="card-title">Habilidades</h6>
+            <p class="card-text">HTML, CSS, JavaScript, Java, Git</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-8">
+
+        <ul class="nav nav-tabs mb-3" id="myTab">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#publicaciones">Publicaciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#proyectos">Proyectos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#biografia">Biografia</a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+
+          <div class="tab-pane fade show active" id="publicaciones">
+
+            <div class="card mb-3">
+              <div class="card-body">
+                <h6 class="card-title">Ya casi acabamos el proyecto esoo (no es verdad)</h6>  
+                <small class="text-muted">Emprendimiento: <span class="post-project-name">ITESO-Connect</span></small>
+                <span class="post-category-badge">Tecnología</span><br>
+                <small class="text-muted">Neguib - 22 abril 2026</small>
+                <p class="card-text mt-2">Le metimos todo el fin de semana y ya esta bien usuarios, queedo fino vaya</p>
+                <button class="btn-apoyo" >
+                  <i class="fa fa-heart"></i>
+                  <span >Apoyar 48</span>
+                </button>
+                <button class="btn-comentar" data-toggle="modal" data-target="#postModal">
+                  <i class="fa fa-comment"></i>
+                    Comentar 12
+                </button>
+              </div>
+            </div>
+
+            <div class="card mb-3">
+              <div class="card-body">
+                <h6 class="card-title">Buscamos colaborador</h6>
+                <small class="text-muted">Emprendimiento: <span class="post-project-name">ITESO-Connect</span></small>
+                <span class="post-category-badge">Tecnología</span><br>
+                <small class="text-muted">Neguib - 18 abril 2026</small>
+                <p class="card-text mt-2">Alguien que sepa hacer Fronend y quiera aprender, tenemos un proyecto y necesitamos gente. Manden mensaje.</p>
+                <button class="btn-apoyo" >
+                  <i class="fa fa-heart"></i>
+                  <span >Apoyar 31</span>
+                </button>
+                <button class="btn-comentar" data-toggle="modal" data-target="#postModal">
+                  <i class="fa fa-comment"></i>
+                    Comentar 7
+                </button>
+              </div>
+            </div>
+
+            <div class="card mb-3">
+              <div class="card-body">
+                <h6 class="card-title">La vida es bonita</h6>
+                <small class="text-muted"><span class="post-project-name"></span></small>
+                <span class="post-category-badge">No asociado</span><br>
+                <small class="text-muted">Neguib - 10 abril 2026</small>
+                <p class="card-text mt-2">La neta es mejor empezar pronto el proyecto la uni ya se va a poner fea pero la vida es bonita.</p>
+                <button class="btn-apoyo"  >
+                  <i class="fa fa-heart"></i>
+                  <span >Apoyar 102</span>
+                </button>
+                <button class="btn-comentar" data-toggle="modal" data-target="#postModal">
+                  <i class="fa fa-comment"></i>
+                    Comentar 23
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="tab-pane fade" id="proyectos">
+
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">ITESO Connect</h5>
+                <p class="card-text">Red social universitaria para conectar con universitarios del ITESO o colaboradores.</p>
+                <p class="text-muted">Categoria: Tecnologia</p>
+                <p class="text-muted">Colaboradores: 4 - Apoyos: 87</p>
+                <a href="#" class="btn btn-outline-primary btn-sm btn-ver-proyecto btn-gradient" data-toggle="modal" data-target="#projectModal">
+                  Ver proyecto
+                </a>
+              </div>
+            </div>
+
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">Proyecto X</h5>
+                <p class="card-text">Monitoreo de la sustancia X en el campus con sensores radioactivos.</p>
+                <p class="text-muted">Categoria: Secreta</p>
+                <p class="text-muted">Colaboradores: 2 - Apoyos: 45</p>
+                <a href="#" class="btn btn-outline-primary btn-sm btn-ver-proyecto btn-gradient" data-toggle="modal" data-target="#projectModal">
+                  Ver proyecto
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="tab-pane fade" id="biografia">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title">Sobre mi</h6>
+                <p class="card-text">Estudiante de Ingenieria en Sistemas en el ITESO. Me interesa el desarrollo web y aprender nuevas cosas.</p>
+
+                <h6 class="card-title mt-3">Proyecto mas apoyado</h6>
+                <p class="card-text">ITESO Connect - 87 apoyos</p>
+
+                <h6 class="card-title mt-3">Habilidades</h6>
+                <p class="card-text">HTML, CSS, JavaScript, Java, Git</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal de proyecto-->
+  <div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <div>
+            <span class="project-category-badge" id="modal-category">Tecnología</span>
+            <h5 class="modal-title" id="projectModalLabel">ITESO-Connect</h5>
+            <div class="project-author-line">
+              <img id="modal-author-avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkMe3CQgG-8Y3O69NCgn72tG2EyMVBbzEwHA&s" alt="autor">
+              <span>por <strong id="modal-author-name">@neguib.beltrán</strong></span>
+              <span>~</span>
+              <span id="modal-date">82 de febrero del 200 A.C.</span>
+            </div>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+
+        <div class="project-stats-bar" id="modal-stats-bar">
+          <div class="project-stat">
+            <span class="project-stat-number" id="modal-apoyos">87</span>
+            <span class="project-stat-label">Apoyos</span>
+          </div>
+          <div class="project-stat">
+            <span class="project-stat-number" id="modal-colaboradores">4</span>
+            <span class="project-stat-label">Colaboradores</span>
+          </div>
+          <div class="project-stat">
+            <span class="project-stat-number" id="modal-publicaciones">1</span>
+            <span class="project-stat-label">Publicaciones</span>
+          </div>
+        </div>
+
+        <ul class="nav nav-tabs" id="projectModalTabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="tab-desc-link" data-toggle="tab" href="#modal-pane-desc" role="tab">
+              Descripción
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="tab-posts-link" data-toggle="tab" href="#modal-pane-posts" role="tab">
+              Publicaciones
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="tab-team-link" data-toggle="tab" href="#modal-pane-team" role="tab">
+              Equipo
+            </a>
+          </li>
+          <!--Este sólo lo debería ver el propitario del proyecto-->
+          <li class="nav-item">
+            <a class="nav-link" id="tab-solicitudes-link" data-toggle="tab" href="#modal-pane-solicitudes" role="tab">
+              Solicitudes de colaboración
+            </a>
+          </li>
+        </ul>
+
+        <div class="modal-body">
+          <!-- Spinner para la carga
+          <div class="modal-loading" id="modal-loading">
+            <i class="fa fa-spinner fa-spin fa-2x mb-2"></i><br>
+              Cargando proyecto...
+          </div>          
+          -->
+          <div class="tab-content" id="modal-tab-content">
+            <div class="tab-pane fade show active" id="modal-pane-desc" role="tabpanel">
+              <p class="project-section-label">Descripcion</p>
+              <p class="project-section-text" id="modal-descripcion">-</p>
+
+              <div class="project-vision-grid">
+                <div class="project-vision-box">
+                  <p class="project-section-label">Visión</p>
+                  <p class="project-section-text mb-0" id="modal-vision">-</p>
+                </div>
+                <div class="project-vision-box">
+                  <p class="project-section-label">Misión</p>
+                  <p class="project-section-text mb-0" id="modal-mision">-</p>
+                </div>
+              </div>
+              
+              <div id="modal-desc">
+                <p class="project-section-text" id="modal-caracteristicas">
+                  Somos la red social universitaria más grande de México!
+                  Estamos buscando talento en Frontend que domine HTML, CSS y Bootstrap.
+                </p>
+                <!--Aquí serían las personas que colaboran en el proyecto-->
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="modal-pane-posts" role="tabpanel">
+              <div id="modal-posts-list">
+                <!--Aquí serían las publicaciones del proyecto-->
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="modal-pane-team" role="tabpanel">
+              <div id="modal-team-list">
+                <!--Aquí serían las personas que colaboran en el proyecto-->
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="modal-pane-solicitudes" role="tabpanel">
+              <div id="modal-solicitudes-list">
+                <!--Aquí serían las solicitudes de colaboración-->
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <div class="modal-footer-actions">
+            <button class="btn-apoyo" >
+              <i class="fa fa-heart"></i>
+              <span>Apoyar</span>
+            </button>
+            <!--
+            <div>
+              <a href="#" class="btn-ver-perfil-proyecto" id="modal-link-perfil">
+                Ver página completa <i class="fa fa-external-link"></i>
+              </a>
+            </div>
+          -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!--Modal de detalle de publicación-->
+<div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="postModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+ 
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          <i class="fa fa-times"></i>
+        </button>
+        <div class="post-modal-data d-flex align-items-start">
+          <img id="pm-author-avatar"
+               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkMe3CQgG-8Y3O69NCgn72tG2EyMVBbzEwHA&s"
+               class="rounded-circle mr-2" width="40" height="40" alt="autor" style="object-fit: cover;">
+               <div class="flex-grow-1">
+                <div class="d-flex align-items-center flex-wrap mb-1">
+                  
+                  <strong class="post-author mr-2" id="post-author-name">
+                    Neguib Beltrán
+                  </strong>
+                
+                <small class="text-muted">
+                  <small><span id="pm-date"> - 8 de mayo del 2026</span></small>
+                </small>
+                </div>
+                <small class="text-muted d-block">
+                  Emprendimiento:
+                  <span class="post-project-name" id="pm-project-name">
+                    ITESO-Connect
+                  </span>
+                  <span class="post-category-badge" id="pm-category">
+                    Tecnología
+                  </span>
+                </small>
+
+               </div>
+                 <a href="#" class="post-project-link d-none" id="pm-project-badge">
+                   <i class="fa fa-rocket"></i>
+                   <span>ITESO-Connect</span>
+                 </a>
+        </div>
+      </div>
+ 
+      <div class="modal-body" id="pm-body">
+        <div id="pm-content" style=" flex:1;">
+          <!-- Texto de la publicación -->
+          <div class="post-modal-body-text" id="pm-text">
+            <p>Hola! Alguien que sepa hacer Front y quiera aprender?</p>
+          </div>
+          <img id="pm-media" class="post-modal-media d-none" src="" alt="media">
+          <div class="post-modal-actions">
+            <button class="btn-apoyo" >
+                <i class="fa fa-heart"></i>
+                <span >Apoyar 48</span>
+            </button>
+            <button class="btn-comentar">
+              <i class="fa fa-comment"></i>
+              Comentarios 12
+            </button>
+            <button class="btn-compartir">
+              <i class="fa fa-share"></i>
+              Compartir
+            </button>
+          </div>
+          <hr>
+          <!-- Lista de comentarios -->
+          <div class="post-comments-section">
+            <p class="post-comments-title">Comentarios</p>
+            <div id="pm-comments-list">
+
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="modal-footer d-flex align-items-center gap-2" style="gap: 0.75rem;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkMe3CQgG-8Y3O69NCgn72tG2EyMVBbzEwHA&s"
+             alt="yo" id="pm-my-avatar" class="rounded-circle" width="36" height="36" style="object-fit: cover; flex-shrink: 0;">
+          <input type="text" id="pm-comment-input" class="modal-input mb-0"
+                 placeholder="Escribe un comentario...">
+          <button class="btn-modal-primary" id="pm-send-btn" style="width: auto; margin:0; padding: .6rem 1rem;" disabled>
+            <i class="fa fa-paper-plane"></i>
+          </button>
+      </div>
+ 
+    </div>
+  </div>
+  </div>
+  
+
+  <!-- Modal de Notificaciones -->
+  <div class="modal fade" id="notificationsModal" tabindex="-1" role="dialog" aria-labelledby="notificationsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+            <i class="fa fa-times"></i>
+          </button>
+          <h5 class="modal-title" id="notificationsModalLabel">
+            <i class="fa fa-bell mr-2"></i>Notificaciones
+          </h5>
+        </div>
+        <div class="modal-body">
+          <div class="notifications-list">
+            <div class="notification-item mb-3 pb-3 border-bottom">
+              <div class="d-flex align-items-start">
+                <div class="notification-icon mr-3">
+                  <i class="fa fa-heart text-danger"></i>
+                </div>
+                <div class="notification-content">
+                  <p class="mb-1">A <strong>María García</strong> le gustó tu publicación</p>
+                  <small class="text-muted">Hace 5 minutos</small>
+                </div>
+              </div>
+            </div>
+            
+            <div class="notification-item mb-3 pb-3 border-bottom">
+              <div class="d-flex align-items-start">
+                <div class="notification-icon mr-3">
+                  <i class="fa fa-user-plus text-primary"></i>
+                </div>
+                <div class="notification-content">
+                  <p class="mb-1"><strong>Carlos López</strong> comenzó a seguirte</p>
+                  <small class="text-muted">Hace 30 minutos</small>
+                </div>
+              </div>
+            </div>
+            
+            <div class="notification-item mb-3 pb-3 border-bottom">
+              <div class="d-flex align-items-start">
+                <div class="notification-icon mr-3">
+                  <i class="fa fa-comment text-success"></i>
+                </div>
+                <div class="notification-content">
+                  <p class="mb-1"><strong>Ana Martínez</strong> comentó en tu publicación</p>
+                  <small class="text-muted">Hace 1 hora</small>
+                </div>
+              </div>
+            </div>
+            
+            <div class="notification-item mb-3 pb-3 border-bottom">
+              <div class="d-flex align-items-start">
+                <div class="notification-icon mr-3">
+                  <i class="fa fa-heart text-danger"></i>
+                </div>
+                <div class="notification-content">
+                  <p class="mb-1">A <strong>Roberto Sánchez</strong> y 3 más les gustó tu proyecto</p>
+                  <small class="text-muted">Hace 2 horas</small>
+                </div>
+              </div>
+            </div>
+            
+            <div class="notification-item mb-3 pb-3 border-bottom">
+              <div class="d-flex align-items-start">
+                <div class="notification-icon mr-3">
+                  <i class="fa fa-envelope text-warning"></i>
+                </div>
+                <div class="notification-content">
+                  <p class="mb-1"><strong>Laura Torres</strong> te envió un mensaje</p>
+                  <small class="text-muted">Hace 3 horas</small>
+                </div>
+              </div>
+            </div>
+            
+            <div class="notification-item mb-3 pb-3 border-bottom">
+              <div class="d-flex align-items-start">
+                <div class="notification-icon mr-3">
+                  <i class="fa fa-user-plus text-primary"></i>
+                </div>
+                <div class="notification-content">
+                  <p class="mb-1"><strong>Pedro Jiménez</strong> comenzó a seguirte</p>
+                  <small class="text-muted">Hace 5 horas</small>
+                </div>
+              </div>
+            </div>
+            
+            <div class="notification-item mb-3 pb-3 border-bottom">
+              <div class="d-flex align-items-start">
+                <div class="notification-icon mr-3">
+                  <i class="fa fa-heart text-danger"></i>
+                </div>
+                <div class="notification-content">
+                  <p class="mb-1">A <strong>Sofía Ramírez</strong> le gustó tu comentario</p>
+                  <small class="text-muted">Hace 8 horas</small>
+                </div>
+              </div>
+            </div>
+            
+            <div class="notification-item mb-3">
+              <div class="d-flex align-items-start">
+                <div class="notification-icon mr-3">
+                  <i class="fa fa-comment text-success"></i>
+                </div>
+                <div class="notification-content">
+                  <p class="mb-1"><strong>Diego Hernández</strong> comentó en el proyecto ITESO-Connect</p>
+                  <small class="text-muted">Hace 1 día</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- Modal de Nueva Publicación -->
+<div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          <i class="fa fa-times"></i>
+        </button>
+        <h5 class="modal-title" id="newPostModalLabel">
+          <i class="fa fa-plus-circle mr-2"></i>Nueva Publicación
+        </h5>
+      </div>
+      
+      <div class="modal-body">
+        <form id="newPostForm">
+          
+          <!-- Título de la publicación -->
+          <div class="form-group">
+            <label for="postTitle" class="font-weight-bold">
+              <i class="fa fa-heading mr-1"></i>Título de la publicación
+            </label>
+            <input type="text" class="form-control" id="postTitle" 
+                   placeholder="Escribe un título llamativo para tu publicación" 
+                   maxlength="150" required>
+            <small class="text-muted">Máximo 150 caracteres</small>
+          </div>
+          
+          <!-- Descripción -->
+          <div class="form-group">
+            <label for="postDescription" class="font-weight-bold">
+              <i class="fa fa-align-left mr-1"></i>Descripción
+            </label>
+            <textarea class="form-control" id="postDescription" rows="5" 
+                      placeholder="Describe tu idea, avance o lo que quieras compartir con la comunidad..." 
+                      required></textarea>
+            <small class="text-muted">Puedes escribir todo lo necesario para expresar tu idea</small>
+          </div>
+          
+          <!-- Cargar imagen o video -->
+          <div class="form-group">
+            <label class="font-weight-bold">
+              <i class="fa fa-photo mr-1"></i>Imagen o Video
+            </label>
+            
+            <!-- Selector de tipo de medio -->
+            <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
+              <label class="btn btn-outline-secondary btn-sm active" id="label-none">
+                <input type="radio" name="mediaType" value="none" checked> 
+                <i class="fa fa-ban mr-1"></i>Ninguno
+              </label>
+              <label class="btn btn-outline-secondary btn-sm" id="label-image">
+                <input type="radio" name="mediaType" value="image"> 
+                <i class="fa fa-file-image-o mr-1"></i>Imagen
+              </label>
+              <label class="btn btn-outline-secondary btn-sm" id="label-video">
+                <input type="radio" name="mediaType" value="video"> 
+                <i class="fa fa-video-camera mr-1"></i>Video
+              </label>
+            </div>
+            
+            <!-- Área para cargar imagen -->
+            <div id="imageUploadArea" style="display: none;">
+              <div class="custom-file mb-2">
+                <input type="file" class="custom-file-input" id="postImage" accept="image/*">
+                <label class="custom-file-label" for="postImage">
+                  <i class="fa fa-upload mr-1"></i>Seleccionar imagen
+                </label>
+              </div>
+              <small class="text-muted d-block mb-2">Formatos aceptados: JPG, PNG, GIF. Tamaño máximo: 5MB</small>
+              
+              <!-- Previsualización de imagen -->
+              <div id="imagePreviewContainer" style="display: none;" class="text-center p-3 bg-light rounded">
+                <img id="imagePreview" src="" alt="Previsualización" 
+                     class="img-fluid rounded" style="max-height: 300px; object-fit: contain;">
+                <button type="button" class="btn btn-sm btn-outline-danger mt-2" id="removeImage">
+                  <i class="fa fa-trash mr-1"></i>Eliminar imagen
+                </button>
+              </div>
+            </div>
+            
+            <!-- Área para cargar video -->
+            <div id="videoUploadArea" style="display: none;">
+              <div class="custom-file mb-2">
+                <input type="file" class="custom-file-input" id="postVideo" accept="video/*">
+                <label class="custom-file-label" for="postVideo">
+                  <i class="fa fa-upload mr-1"></i>Seleccionar video
+                </label>
+              </div>
+              <small class="text-muted d-block mb-2">Formatos aceptados: MP4, WebM. Tamaño máximo: 50MB</small>
+              
+              <!-- Previsualización de video -->
+              <div id="videoPreviewContainer" style="display: none;" class="text-center p-3 bg-light rounded">
+                <video id="videoPreview" controls class="img-fluid rounded" style="max-height: 300px;">
+                  Tu navegador no soporta la reproducción de video.
+                </video>
+                <button type="button" class="btn btn-sm btn-outline-danger mt-2" id="removeVideo">
+                  <i class="fa fa-trash mr-1"></i>Eliminar video
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Relacionar al proyecto -->
+          <div class="form-group">
+            <label for="projectSelect" class="font-weight-bold">
+              <i class="fa fa-rocket mr-1"></i>Relacionar con proyecto
+            </label>
+            <select class="form-control" id="projectSelect">
+              <option value="none" selected>Sin proyecto (publicación personal)</option>
+              <option value="1">ITESO-Connect</option>
+              <option value="2">Proyecto X</option>
+              <option value="3">Mi nuevo proyecto</option>
+            </select>
+            <small class="text-muted">
+              <i class="fa fa-info-circle mr-1"></i>
+              Relaciona tu publicación con un proyecto existente o publícala de forma personal
+            </small>
+          </div>
+          
+        </form>
+      </div>
+      
+      <div class="modal-footer">
+        <div class="d-flex justify-content-end w-100">
+          <div>
+            <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal">
+              <i class="fa fa-times mr-1"></i>Cancelar
+            </button>
+            <button type="submit" class="btn btn-modal-primary"style="width: auto; margin:0; padding: .6rem 1rem;" id="publishBtn">
+              <i class="fa fa-paper-plane mr-1"></i>Publicar
+            </button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+  <footer>
+    <div>
+      <span class="brand-badge-footer">IC</span>
+      <span class="footer-brand-name">ITESO-Connect</span>
+    </div>
+    <p>© 2026 ITESO-Connect. La red social para emprendedores universitarios.</p>
+  </footer>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  </body>
+  
+</html>

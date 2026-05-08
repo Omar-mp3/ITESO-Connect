@@ -1,114 +1,271 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="es">
+ 
 <head>
-  <title>Title</title>
-  <!-- Required meta tags -->
+  <title>ITESO-Connect</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+ 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/styles.css">
 </head>
-
+ 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-    <!--El texto es un placeholder, deberíamos agregar una imagen ahí-->
-    <a class="navbar-brand" href="#"> EmprendeU</a>
-    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
-    <div class="collapse navbar-collapse" id="collapsibleNavId">
-      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+ 
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">
+      <span class="brand-badge">IC</span>
+      ITESO-Connect
+    </a>
+ 
+    <button class="navbar-toggler d-lg-none" type="button"
+      data-toggle="collapse" data-target="#navMain"
+      aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+ 
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0 align-items-center">
         <li class="nav-item">
-          <a class="nav-link" href="#" data-toggle="modal" data-target="#registro">Registrarse</a>
+          <a class="nav-link nav-link-plain" href="#"
+            data-toggle="modal" data-target="#login">Iniciar sesión</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" data-toggle="modal" data-target="#login">Iniciar Sesión</a>
+        <li class="nav-item ml-2">
+          <a class="btn btn-nav-register" href="#"
+            data-toggle="modal" data-target="#registro">Registrarse</a>
         </li>
       </ul>
     </div>
   </nav>
-
-
-  <!-- Modales para registro e inicio de sesión-->
-
-  <!-- Modal -->
-  <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
+ 
+ 
+  <!--Hero-->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        ✦ La red social para emprendedores universitarios
+      </div>
+ 
+      <h1>
+        Haz realidad tus sueños y<br>
+        <span class="accent">conecta con mentes<br>brillantes</span>
+      </h1>
+ 
+      <p class="hero-sub">
+        Únete a la comunidad de emprendedores más grande de Latinoamérica.
+        Comparte ideas, encuentra mentores y transforma tu proyecto en realidad.
+      </p>
+ 
+      <a href="#" class="btn btn-hero-primary" data-toggle="modal" data-target="#registro">
+        Comenzar gratis →
+      </a>
+      <a href="#stories" class="btn btn-hero-secondary">
+        Ver cómo funciona
+      </a>
+    </div>
+  </section>
+ 
+ 
+  <!--HIstorias-->
+  <section class="stories-section" id="stories">
+    <div class="container">
+      <h2 class="section-title">Historias que inspiran</h2>
+      <p class="section-sub">Conoce a emprendedores que están cambiando el mundo</p>
+ 
+      <div class="row">
+ 
+        <!-- Card 1 -->
+        <div class="col-12 col-md-4 mb-4">
+          <div class="story-card">
+            <div class="story-img-placeholder img-tech">
+              <img class="story-img-placeholder" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC-_m09DEzGbriNCRwmPmErjw0o6W6bvdZVg&s"></img>
+              <span class="story-category-badge badge-tech">Tecnología</span>
+            </div>
+            <div class="story-card-body">
+              <h5>De la universidad a Silicon Valley</h5>
+              <p>Cómo un equipo de estudiantes creó una app con 50k usuarios en 3 meses</p>
+              <div class="story-author">
+                <div class="author-avatar av-purple">TH</div>
+                <div class="author-info">
+                  <strong>TechHub Solutions</strong>
+                  <span>María González</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Card 2 -->
+        <div class="col-12 col-md-4 mb-4">
+          <div class="story-card">
+            <div class="story-img-placeholder img-eco">
+              <img class="story-img-placeholder" src="https://www.solucionessustentables.com.ar/wp-content/uploads/2023/05/Por-que-es-importante-que-tus-proyectos-sean-sustentables1.jpg"></img>
+              <span class="story-category-badge badge-eco">Sustentabilidad</span>
+            </div>
+            <div class="story-card-body">
+              <h5>Emprendimiento verde que ganó $1M</h5>
+              <p>La historia de cómo convertimos basura en productos de lujo</p>
+              <div class="story-author">
+                <div class="author-avatar av-green">EA</div>
+                <div class="author-info">
+                  <strong>EcoArte</strong>
+                  <span>Ana Martínez</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Card 3 -->
+        <div class="col-12 col-md-4 mb-4">
+          <div class="story-card">
+            <div class="story-img-placeholder img-edu">
+              <img class="story-img-placeholder" src="https://img.freepik.com/foto-gratis/grupo-jovenes-adultos-que-estudian-juntos-divierten-biblioteca-escolar_662251-1224.jpg?semt=ais_hybrid&w=740&q=80"></img>
+              <span class="story-category-badge badge-edu">Educación</span>
+            </div>
+            <div class="story-card-body">
+              <h5>Revolucionando el estudio colaborativo</h5>
+              <p>Plataforma que conecta a 10k estudiantes en toda Latinoamérica</p>
+              <div class="story-author">
+                <div class="author-avatar av-orange">SB</div>
+                <div class="author-info">
+                  <strong>StudyBuddy</strong>
+                  <span>Diego Torres</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+ 
+      </div>
+    </div>
+  </section>
+ 
+ 
+  <!--cta banner-->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-banner">
+        <h2>¿Listo para comenzar tu viaje emprendedor?</h2>
+        <p>Crea tu cuenta gratis y conecta con miles de emprendedores hoy mismo</p>
+        <a href="#" class="btn btn-cta-white" data-toggle="modal" data-target="#registro">
+          Registrarse ahora
+        </a>
+        <a href="#" class="btn btn-cta-outline" data-toggle="modal" data-target="#login">
+          Iniciar sesión
+        </a>
+      </div>
+    </div>
+  </section>
+ 
+ 
+  <!--footer-->
+  <footer>
+    <div>
+      <span class="brand-badge-footer">IC</span>
+      <span class="footer-brand-name">ITESO-Connect</span>
+    </div>
+    <p>© 2026 ITESO-Connect. La red social para emprendedores universitarios.</p>
+  </footer>
+ 
+ 
+  <!--Modal inicio sesión-->
+  <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="position:relative;">
+ 
+        <button class="btn-close-modal" data-dismiss="modal" aria-label="Cerrar">×</button>
+ 
         <div class="modal-header">
-          <h5 class="modal-title">Inicia sesión en EmprendeU</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <div class="modal-brand">
+            <span class="brand-badge">IC</span>
+            <span class="modal-brand-name">ITESO-Connect</span>
+          </div>
+          <h5>Inicia sesión en ITESO-Connect</h5>
+          <p class="modal-tagline">¡Es bueno verte de nuevo!</p>
+        </div>
+ 
+        <div class="modal-body">
+          <input type="email" name="correo" class="modal-input" placeholder="Correo electrónico">
+          <input type="password" name="password" class="modal-input" placeholder="Contraseña">
+          <div class="modal-forgot">
+            <a href="#">¿Olvidaste tu contraseña?</a>
+          </div>
+          <label class="modal-check-label">
+            <input type="checkbox"> Mantenerme conectado
+          </label>
+        </div>
+ 
+        <div class="modal-footer">
+          <button type="button" class="btn btn-modal-primary" data-dismiss="modal">
+            Iniciar sesión →
           </button>
+          <p class="modal-switch">
+            ¿No tienes cuenta?
+            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#registro">Regístrate ahora</a>
+          </p>
         </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <div class="input-group">
-              <input type="email" name="correo" class="form-control" placeholder="Correo electrónico">
-            </div>
-            <div class="input-group">
-              <input type="password" name="password" class="form-control" placeholder="Contraseña">
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <div class="container-fluid">
-            <div class="form-group" d-flex justify-content-center>
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Iniciar sesión</button>
-            </div>
-            <div class="form-group">
-              No tienes cuenta?
-              <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#registro">Regístrate aquí!</a>
-            </div>
-          </div>
-        </div>
-    </div>
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div class="modal fade" id="registro" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Crea tu cuenta de EmprendeU</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-          <form action="">
-            <div class="row">
-              <div class="col-6">
-                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre(s)">
-              </div>
-              <div class="col-6">
-                <input type="text" name="apellido" class="form-control" placeholder="Apellido(s)">
-              </div>
-            </div>
-            <input type="email" name="correo" id="correo_registro" class="form-control mt-3" placeholder="Correo electrónico" required>
-            <input type="password" name="password" id="password_registro" class="form-control mt-3" placeholder="Contraseña" required>
-            <input type="password" name="password_confirm" id="password_confirm" class="form-control mt-3" placeholder="Confirmar contraseña" required>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <div class="container-fluid">
-            <div class="form-group" d-flex justify-content-center>
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Registrar cuenta</button>
-            </div>
-            <div class="form-group">
-              Ya tienes cuenta?
-              <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#login">Inicia sesión aquí!</a>
-            </div>
-          </div>
-        </div>
+ 
       </div>
     </div>
   </div>
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ 
+ 
+  <!--Modal registro-->
+  <div class="modal fade" id="registro" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="position:relative;">
+ 
+        <button class="btn-close-modal" data-dismiss="modal" aria-label="Cerrar">×</button>
+ 
+        <div class="modal-header">
+          <div class="modal-brand">
+            <span class="brand-badge">IC</span>
+            <span class="modal-brand-name">ITESO-Connect</span>
+          </div>
+          <h5>Crea tu cuenta de ITESO-Connect</h5>
+          <p class="modal-tagline">¡Estás a un paso de conectar!</p>
+        </div>
+ 
+        <div class="modal-body">
+          <div class="modal-input-row">
+            <input type="text" name="nombre" class="modal-input" placeholder="Nombre(s)">
+            <input type="text" name="apellido" class="modal-input" placeholder="Apellido(s)">
+          </div>
+          <input type="email" name="correo" class="modal-input" placeholder="✉ Correo electrónico" required>
+          <input type="password" name="password" class="modal-input" placeholder="🔒 Crear contraseña" required>
+          <input type="password" name="password_confirm" class="modal-input" placeholder="Confirmar contraseña" required>
+ 
+          <div class="social-divider">¿O registrarte con?</div>
+          <div class="social-btns">
+            <div class="social-btn">G</div>
+            <div class="social-btn">in</div>
+            <div class="social-btn">𝕏</div>
+          </div>
+        </div>
+ 
+        <div class="modal-footer">
+          <button type="button" class="btn btn-modal-primary" data-dismiss="modal">
+            Registrar cuenta →
+          </button>
+          <p class="modal-switch">
+            ¿Ya tienes cuenta?
+            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#login">Iniciar sesión</a>
+          </p>
+        </div>
+ 
+      </div>
+    </div>
+  </div>
+ 
+ 
+  <!-- jQuery, Popper, Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -119,6 +276,5 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 </body>
-
+ 
 </html>
-

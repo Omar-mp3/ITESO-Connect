@@ -1,0 +1,975 @@
+/* ─── Variables globales ─── */
+:root {
+  --purple:      #7C3AED;
+  --purple-dark: #6D28D9;
+  --purple-light:#EDE9FE;
+  --blue-grad:   linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+  --dark:        #1A1A2E;
+  --gray-text:   #6B7280;
+  --card-radius: 16px;
+  --nav-height:  68px;
+}
+
+/* ─── Base ─── */
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--dark);
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, .brand-name {
+  font-family: 'Sora', sans-serif;
+}
+
+/* ─── Navbar ─── */
+.navbar {
+  height: var(--nav-height);
+  background: #fff !important;
+  box-shadow: 0 1px 0 #E5E7EB;
+  padding: 0 2rem;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--purple) !important;
+}
+
+/* ─── Brand badge (navbar y modales) ─── */
+/* Consolidado: .brand-badge cubre ambos contextos;
+   .brand-badge-footer extiende con display:inline-flex para el footer */
+.brand-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--blue-grad);
+  color: #fff;
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: .85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-badge-footer {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--blue-grad);
+  color: #fff;
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: .85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: .5rem;
+}
+
+/* ─── Modal dentro del modal de proyectos: badge más pequeño ─── */
+.modal-brand .brand-badge {
+  width: 30px;
+  height: 30px;
+  font-size: .75rem;
+}
+
+.nav-link-plain {
+  color: #374151 !important;
+  font-weight: 500;
+  font-size: .95rem;
+  padding: .4rem 1rem !important;
+}
+
+/* ─── Botones de gradiente (navbar, perfil, feed) ─── */
+/* Unificado: btn-nav-register, btn-nav-publish y btn-gradient
+   comparten la misma base visual */
+.btn-nav-register,
+.btn-nav-publish,
+.btn-gradient {
+  background: var(--blue-grad) !important;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: .9rem;
+  padding: .45rem 1.3rem !important;
+  border-radius: 50px;
+  border: none;
+  white-space: nowrap;
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+.btn-nav-register:hover,
+.btn-nav-publish:hover,
+.btn-gradient:hover {
+  opacity: .9;
+  color: #fff !important;
+  text-decoration: none;
+}
+
+/* ─── Hero ─── */
+.hero {
+  padding: 90px 0 80px;
+  background: #fff;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: #F5F3FF;
+  color: var(--purple);
+  font-size: .82rem;
+  font-weight: 600;
+  padding: .35rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1.8rem;
+  border: 1px solid #DDD6FE;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--dark);
+  margin-bottom: .5rem;
+}
+
+.hero h1 .accent {
+  color: var(--purple);
+}
+
+.hero-sub {
+  color: var(--gray-text);
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin: 1.2rem auto 2.2rem;
+  line-height: 1.7;
+}
+
+/* ─── Botones hero ─── */
+.btn-hero-primary,
+.btn-hero-secondary {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: .75rem 2rem;
+  border-radius: 50px;
+}
+
+.btn-hero-primary {
+  background: var(--blue-grad);
+  color: #fff;
+  border: none;
+  margin-right: .8rem;
+}
+
+.btn-hero-primary:hover {
+  opacity: .9;
+  color: #fff;
+}
+
+.btn-hero-secondary {
+  background: #fff;
+  color: var(--dark);
+  border: 2px solid #E5E7EB;
+}
+
+.btn-hero-secondary:hover {
+  border-color: var(--purple);
+  color: var(--purple);
+}
+
+/* ─── Sección de historias ─── */
+.stories-section {
+  background: #FAFAFA;
+  padding: 70px 0 80px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--gray-text);
+  margin-bottom: 2.8rem;
+}
+
+/* Story cards */
+.story-card {
+  background: #fff;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,.07);
+  height: 100%;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.story-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,.12);
+}
+
+.story-img-placeholder {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  position: relative;
+}
+
+.img-tech { background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 100%); }
+.img-eco  { background: linear-gradient(135deg, #6ee7b7 0%, #34d399 100%); }
+.img-edu  { background: linear-gradient(135deg, #fca5a5 0%, #f87171 100%); }
+
+.story-category-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: .72rem;
+  font-weight: 700;
+  padding: .25rem .75rem;
+  border-radius: 50px;
+  color: #fff;
+}
+
+.badge-tech  { background: #7C3AED; }
+.badge-eco   { background: #059669; }
+.badge-edu   { background: #EA580C; }
+
+.story-card-body {
+  padding: 1.2rem 1.4rem 1.4rem;
+}
+
+.story-card-body h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: .4rem;
+  color: var(--dark);
+}
+
+.story-card-body p {
+  font-size: .85rem;
+  color: var(--gray-text);
+  margin-bottom: 1rem;
+  line-height: 1.55;
+}
+
+.story-author {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.author-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.av-purple { background: #7C3AED; }
+.av-green  { background: #059669; }
+.av-orange { background: #EA580C; }
+
+.author-info strong {
+  font-size: .82rem;
+  display: block;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.author-info span {
+  font-size: .75rem;
+  color: var(--gray-text);
+}
+
+/* ─── CTA Banner ─── */
+.cta-section {
+  padding: 70px 0;
+  background: #fff;
+}
+
+.cta-banner {
+  background: var(--blue-grad);
+  border-radius: 24px;
+  padding: 60px 40px;
+  text-align: center;
+  color: #fff;
+}
+
+.cta-banner h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: .8rem;
+}
+
+.cta-banner p {
+  font-size: 1rem;
+  opacity: .9;
+  margin-bottom: 2rem;
+}
+
+/* ─── Botones CTA ─── */
+.btn-cta-white,
+.btn-cta-outline {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: .95rem;
+  padding: .7rem 1.8rem;
+  border-radius: 50px;
+  margin: .3rem;
+}
+
+.btn-cta-white {
+  background: #fff;
+  color: var(--purple);
+  border: none;
+  font-weight: 700;
+}
+
+.btn-cta-white:hover {
+  opacity: .9;
+  color: var(--purple-dark);
+}
+
+.btn-cta-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,.6);
+  font-weight: 600;
+}
+
+.btn-cta-outline:hover {
+  background: rgba(255,255,255,.15);
+  color: #fff;
+}
+
+/* ─── Footer ─── */
+footer {
+  background: var(--dark);
+  color: rgba(255,255,255,.65);
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+.footer-brand-name {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+footer p {
+  font-size: .85rem;
+  margin: .6rem 0 0;
+}
+
+/* ─── Modales (base compartida) ─── */
+.modal-content {
+  border-radius: var(--card-radius);
+  border: none;
+  box-shadow: 0 20px 60px rgba(0,0,0,.15);
+  overflow: hidden;
+}
+
+.modal-header {
+  border-bottom: none;
+  padding: 1.8rem 2rem 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modal-brand {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: 1.2rem;
+}
+
+.modal-brand-name {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  color: var(--purple);
+  font-size: .95rem;
+}
+
+.modal-header h5 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: .2rem;
+}
+
+.modal-tagline {
+  font-size: .88rem;
+  color: var(--gray-text);
+  margin-bottom: 0;
+}
+
+.modal-body    { padding: 1.5rem 2rem; }
+.modal-footer { border-top: none; padding: 0 2rem 2rem; display: block; }
+
+/* ─── Inputs de modal ─── */
+.modal-input {
+  border: 1.5px solid #E5E7EB;
+  border-radius: 10px;
+  padding: .65rem 1rem;
+  font-size: .9rem;
+  width: 100%;
+  margin-bottom: .85rem;
+  background: #F9FAFB;
+  color: var(--dark);
+  transition: border-color .2s;
+}
+
+.modal-input:focus {
+  border-color: var(--purple);
+  outline: none;
+  background: #fff;
+}
+
+.modal-input-row {
+  display: flex;
+  gap: .75rem;
+  margin-bottom: .85rem;
+}
+
+.modal-input-row .modal-input { margin-bottom: 0; }
+
+.btn-modal-primary {
+  background: var(--blue-grad);
+  color: #fff;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: .95rem;
+  padding: .75rem 1.5rem;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.btn-modal-primary:hover { opacity: .9; color: #fff; }
+
+.modal-switch {
+  font-size: .85rem;
+  color: var(--gray-text);
+  text-align: center;
+}
+
+.modal-switch a { color: var(--purple); font-weight: 600; }
+
+.modal-forgot {
+  text-align: right;
+  font-size: .82rem;
+  margin-bottom: .5rem;
+}
+
+.modal-forgot a { color: var(--purple); }
+
+.modal-check-label {
+  font-size: .85rem;
+  color: var(--gray-text);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .75rem;
+}
+
+.social-divider {
+  text-align: center;
+  color: var(--gray-text);
+  font-size: .8rem;
+  margin: .5rem 0 .75rem;
+  position: relative;
+}
+
+.social-divider::before,
+.social-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 38%;
+  height: 1px;
+  background: #E5E7EB;
+}
+
+.social-divider::before { left: 0; }
+.social-divider::after  { right: 0; }
+
+.social-btns {
+  display: flex;
+  justify-content: center;
+  gap: .75rem;
+  margin-bottom: 1rem;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1.5px solid #E5E7EB;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: .85rem;
+  color: var(--gray-text);
+  cursor: pointer;
+}
+
+.social-btn:hover { border-color: var(--purple); color: var(--purple); }
+
+.btn-close-modal{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--gray-text);
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* ─── Links ─── */
+.card-link,
+.nav-link {
+  color: var(--purple);
+}
+
+/* ─── Animaciones de íconos (bell / comment) ─── */
+.fa-bell:hover,
+.fa-comment:hover {
+  animation: shake 0.5s 1;
+}
+
+@keyframes shake {
+  0%  { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+}
+
+/* ══════════════════════════════════════════════
+   MODAL DE PROYECTO (#projectModal)
+   ══════════════════════════════════════════════ */
+
+#projectModal .modal-dialog { max-width: 680px; }
+
+/* Header con banner de color — sobreescribe la base compartida */
+#projectModal .modal-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, var(--purple-dark) 60%, var(--purple) 100%);
+  border: none;
+  padding: 1.5rem 1.75rem 1.25rem;
+  position: relative;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+#projectModal .modal-header .close {
+  color: rgba(255,255,255,0.7);
+  text-shadow: none;
+  opacity: 1;
+  font-size: 1.4rem;
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  transition: color 0.15s;
+}
+
+#projectModal .modal-header .close:hover { color: #fff; }
+
+/* Badges de categoría */
+.project-category-badge {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 0.5rem;
+}
+
+.post-category-badge {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  background-color: var(--purple-light);
+  border: 1px solid var(--purple);
+  border-radius: 20px;
+  color: var(--purple);
+  margin-bottom: 0.5rem;
+}
+
+.post-project-name {
+  font-weight: bold;
+  color: var(--purple);
+}
+
+#projectModal .modal-title {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #fff;
+  margin: 0 0 0.35rem;
+  line-height: 1.3;
+}
+
+.project-author-line {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.75);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.project-author-line img {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid rgba(255,255,255,0.4);
+}
+
+/* Stats bar */
+.project-stats-bar {
+  display: flex;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
+}
+
+.project-stat {
+  flex: 1;
+  text-align: center;
+  padding: 0.85rem 0.5rem;
+  border-right: 1px solid #f0f0f0;
+}
+
+.project-stat:last-child { border-right: none; }
+
+.project-stat-number {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  display: block;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.project-stat-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Pestañas del modal de proyecto */
+#projectModal .nav-tabs {
+  border-bottom: 1px solid #eee;
+  padding: 0 1.5rem;
+  background: #fff;
+}
+
+#projectModal .nav-tabs .nav-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  color: #888;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.65rem 0.25rem;
+  margin-right: 1.25rem;
+  border-radius: 0;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+#projectModal .nav-tabs .nav-link.active {
+  color: #1a1a2e;
+  border-bottom-color: #1a1a2e;
+  background: transparent;
+  font-weight: 600;
+}
+
+#projectModal .nav-tabs .nav-link:hover:not(.active) {
+  color: #444;
+  border-bottom-color: #ddd;
+}
+
+/* Body del modal de proyecto — sobreescribe la base compartida */
+#projectModal .modal-body {
+  padding: 1.5rem 1.75rem;
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+#projectModal .modal-body::-webkit-scrollbar { width: 4px; }
+#projectModal .modal-body::-webkit-scrollbar-track { background: transparent; }
+#projectModal .modal-body::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
+
+/* Secciones de descripción */
+.project-section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 0.4rem;
+}
+
+.project-section-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  color: #333;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.project-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.project-vision-box {
+  background: #f8f9ff;
+  border: 1px solid #eaecf8;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+}
+
+/* Tarjetas de publicaciones dentro del modal */
+.modal-post-card {
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.75rem;
+  transition: border-color 0.15s;
+}
+
+.modal-post-card:hover { border-color: #d0d0d0; }
+
+.modal-post-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.modal-post-author img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.modal-post-author strong {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  color: #1a1a2e;
+}
+
+.modal-post-author small {
+  color: #aaa;
+  font-size: 0.75rem;
+}
+
+.modal-post-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  color: #444;
+  line-height: 1.55;
+  margin-bottom: 0.5rem;
+}
+
+.modal-post-actions a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  color: #888;
+  margin-right: 0.75rem;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.modal-post-actions a:hover { color: #1a1a2e; }
+
+/* Filas de miembros del equipo */
+.modal-member-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.modal-member-row:last-child { border-bottom: none; }
+
+.modal-member-row img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.modal-member-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.modal-member-role {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  color: #999;
+  margin: 0;
+}
+
+.modal-member-row .btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  padding: 3px 12px;
+  border-radius: 20px;
+}
+
+/* Footer del modal de proyecto */
+#projectModal .modal-footer {
+  border-top: 1px solid #f0f0f0;
+  padding: 0.85rem 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.modal-footer-actions { display: flex; gap: 0.5rem; }
+
+/* ─── Botones de acción (apoyo / comentar / compartir) ─── */
+/* Unificados: btn-apoyo, btn-comentar, btn-compartir comparten base */
+.btn-apoyo,
+.btn-comentar,
+.btn-compartir {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  padding: 5px 16px;
+  border: 1.5px solid #dee2e6;
+  background: transparent;
+  color: #555;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+
+.btn-apoyo .fa,
+.btn-comentar .fa { margin-right: 5px; }
+
+.btn-apoyo:hover,
+.btn-apoyo.active {
+  background: #fff0f0;
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+.btn-comentar:hover {
+  background: #f0f4ff;
+  border-color: #1a1a2e;
+  color: #1a1a2e;
+}
+
+.btn-ver-perfil-proyecto {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.btn-ver-perfil-proyecto:hover { color: #1a1a2e; text-decoration: underline; }
+
+/* ─── Spinner de carga ─── */
+#projectModal .modal-loading {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #aaa;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 576px) {
+  .project-vision-grid { grid-template-columns: 1fr; }
+  #projectModal .modal-body { max-height: 300px; }
+}
+
+.chat-container {
+    height: calc(100vh - var(--nav-height) - 40px);
+    margin-top: 20px;
+}
+.contacts_card, .chat .card {
+    height: 100%;
+    border-radius: var(--card-radius);
+    border: 1px solid #E5E7EB;
+}
+.contacts_body {
+    overflow-y: auto;
+}
+.msg-container-send {
+    background-color: var(--purple) !important;
+}
+ 
+.img-cont { position: relative; height: 50px; width: 50px; }
+.img-cont img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid #fff; }
+.user-info { margin-left: 15px; }
+.contacts li { list-style: none; padding: 10px; border-bottom: 1px solid #f0f0f0; cursor: pointer; }
+.contacts li.active { background-color: var(--purple-light); }
+
+#notificationsModal .modal-title {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--purple);
+  margin: 0 0 0.35rem;
+  line-height: 1.3; 
+}
+#newPostModal .modal-title {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--purple);
+  margin: 0 0 0.35rem;
+  line-height: 1.3;  
+}
