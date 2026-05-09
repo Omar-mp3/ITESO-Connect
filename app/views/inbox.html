@@ -37,12 +37,12 @@
       <div class="collapse navbar-collapse" id="navPrincipal">
         <ul class="navbar-nav ml-auto align-items-center">
           <li class="nav-item">
-            <a class="nav-link btn btn-gradient btn-sm px-3 text-white mr-lg-3" href="#">+ Nueva publicación</a>
+            <a class="nav-link btn btn-gradient btn-sm px-3 text-white mr-lg-3" href="#" data-toggle="modal" data-target="#newPostModal">+ Nueva publicación</a>
           </li>
           <li class="nav-item px-2"><a class="nav-link" href="#" data-toggle="modal" data-target="#notificationsModal"><i class="fa fa-bell"></i></a></li>
           <li class="nav-item px-2"><a class="nav-link" href="inbox.html"><i class="fa fa-comment"></i></a></li>
           <li class="nav-item px-2"><a class="nav-link" href="profile.html"><i class="fa fa-user"></i></a></li>
-          <li class="nav-item pl-lg-3"><a class="nav-link text-danger" href="#">Cerrar sesión</a></li>
+          <li class="nav-item pl-lg-3"><a class="nav-link text-danger" href="home.html">Cerrar sesión</a></li>
         </ul>
       </div>
     </div>
@@ -258,6 +258,126 @@
     </div>
   </div>
   
+  <!--Modal de nueva publocación-->
+  <div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+            <i class="fa fa-times"></i>
+          </button>
+          <h5 class="modal-title" id="newPostModalLabel">
+            <i class="fa fa-plus-circle mr-2"></i>Nueva Publicación
+          </h5>
+        </div>
+
+        <div class="modal-body">
+          <form id="newPostForm">
+            <!-- Título de la publicación -->
+            <div class="form-group">
+              <label for="postTitle" class="font-weight-bold">
+                <i class="fa fa-heading mr-1"></i>Título de la publicación
+              </label>
+              <input type="text" class="form-control" id="postTitle"
+                placeholder="Escribe un título llamativo para tu publicación" maxlength="150" required />
+              <small class="text-muted">Máximo 150 caracteres</small>
+            </div>
+
+            <!-- Descripción -->
+            <div class="form-group">
+              <label for="postDescription" class="font-weight-bold">
+                <i class="fa fa-align-left mr-1"></i>Descripción
+              </label>
+              <textarea class="form-control" id="postDescription" rows="5"
+                placeholder="Describe tu idea, avance o lo que quieras compartir con la comunidad..."
+                required></textarea>
+              <small class="text-muted">Puedes escribir todo lo necesario para expresar tu
+                idea</small>
+            </div>
+
+            <!-- Cargar imagen o video -->
+            <div class="form-group">
+              <div>
+                <label class="font-weight-bold">
+                  <i class="fa fa-photo mr-1"></i>¿Agregar imagen?
+                </label>
+              </div>
+
+              <!-- Selector de tipo de medio -->
+              <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
+                <label class="btn btn-outline-secondary btn-sm active" id="label-none">
+                  <input type="radio" name="mediaType" value="none" checked />
+                  <i class="fa fa-ban mr-1"></i>Ninguno
+                </label>
+                <label class="btn btn-outline-secondary btn-sm" id="label-image">
+                  <input type="radio" name="mediaType" value="image" />
+                  <i class="fa fa-file-image-o mr-1"></i>Imagen
+                </label>
+              </div>
+
+              <!-- Área para cargar imagen -->
+              <div id="imageUploadArea" style="display: none">
+                <div class="custom-file mb-2">
+                  <input type="file" class="custom-file-input" id="postImage" accept="image/*" />
+                  <label class="custom-file-label" for="postImage">
+                    <i class="fa fa-upload mr-1"></i>Seleccionar imagen
+                  </label>
+                </div>
+                <small class="text-muted d-block mb-2">Formatos aceptados: JPG, PNG, GIF. Tamaño máximo:
+                  5MB</small>
+
+                <!-- Previsualización de imagen -->
+                <div id="imagePreviewContainer" style="display: none" class="text-center p-3 bg-light rounded">
+                  <img id="imagePreview" src="" alt="Previsualización" class="img-fluid rounded"
+                    style="max-height: 300px; object-fit: contain" />
+                  <button type="button" class="btn btn-sm btn-outline-danger mt-2" id="removeImage">
+                    <i class="fa fa-trash mr-1"></i>Eliminar imagen
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Relacionar al proyecto -->
+            <div class="form-group">
+              <label for="projectSelect" class="font-weight-bold">
+                <i class="fa fa-rocket mr-1"></i>Relacionar con proyecto
+              </label>
+              <select class="form-control" id="projectSelect">
+                <option value="none" selected>
+                  Sin proyecto (publicación personal)
+                </option>
+                <option value="1">ITESO-Connect</option>
+                <option value="2">Proyecto X</option>
+                <option value="3">Mi nuevo proyecto</option>
+              </select>
+              <small class="text-muted">
+                <i class="fa fa-info-circle mr-1"></i>
+                Relaciona tu publicación con un proyecto existente o publícala
+                de forma personal
+              </small>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <div class="d-flex justify-content-end w-100">
+            <div>
+              <button type="button" class="btn btn-modal-secondary" style="width: auto; margin: 0; padding: 0.6rem 1rem"
+                data-dismiss="modal">
+                <i class="fa fa-times mr-1"></i>Cancelar
+              </button>
+              <button type="submit" class="btn btn-modal-primary" style="width: auto; margin: 0; padding: 0.6rem 1rem"
+                id="publishBtn">
+                <i class="fa fa-paper-plane mr-1"></i>Publicar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <div>
       <span class="brand-badge-footer">IC</span>

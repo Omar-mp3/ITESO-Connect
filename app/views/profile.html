@@ -3,18 +3,19 @@
 
 <head>
   <title>Perfil - ITESO Connect</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  
-    
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/public/css/styles.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/public/css/styles.css" />
 </head>
 
 <body>
@@ -31,12 +32,22 @@
       <div class="collapse navbar-collapse" id="navPrincipal">
         <ul class="navbar-nav ml-auto align-items-center">
           <li class="nav-item">
-            <a class="nav-link btn btn-gradient btn-sm px-3 text-white mr-lg-3" href="#" data-toggle="modal" data-target="#newPostModal">+ Nueva publicación</a>
+            <a class="nav-link btn btn-gradient btn-sm px-3 text-white mr-lg-3" href="#" data-toggle="modal"
+              data-target="#newPostModal">+ Nueva publicación</a>
           </li>
-          <li class="nav-item px-2"><a class="nav-link" href="#" data-toggle="modal" data-target="#notificationsModal"><i class="fa fa-bell"></i></a></li>
-          <li class="nav-item px-2"><a class="nav-link" href="inbox.html"><i class="fa fa-comment"></i></a></li>
-          <li class="nav-item px-2"><a class="nav-link" href="profile.html"><i class="fa fa-user"></i></a></li>
-          <li class="nav-item pl-lg-3"><a class="nav-link text-danger" href="#">Cerrar sesión</a></li>
+          <li class="nav-item px-2">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#notificationsModal"><i
+                class="fa fa-bell"></i></a>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link" href="inbox.html"><i class="fa fa-comment"></i></a>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link" href="profile.html"><i class="fa fa-user"></i></a>
+          </li>
+          <li class="nav-item pl-lg-3">
+            <a class="nav-link text-danger" href="home.html">Cerrar sesión</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -44,18 +55,29 @@
 
   <div class="container mt-4">
     <div class="row">
-
-
       <div class="col-md-4">
         <div class="card mb-3">
           <div class="card-body text-center">
-           
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Kanye_West_at_the_2009_Tribeca_Film_Festival_%28crop_2%29.jpg/250px-Kanye_West_at_the_2009_Tribeca_Film_Festival_%28crop_2%29.jpg" class="rounded-circle mb-2" width="100" height="100" alt="foto de perfil" style="object-fit: cover;">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Kanye_West_at_the_2009_Tribeca_Film_Festival_%28crop_2%29.jpg/250px-Kanye_West_at_the_2009_Tribeca_Film_Festival_%28crop_2%29.jpg"
+              class="rounded-circle mb-2" width="100" height="100" alt="foto de perfil" style="object-fit: cover" />
             <h5 class="card-title">Neguib Zayed Beltran Zuno</h5>
             <p class="text-muted">@neguib.beltran</p>
-            <p class="card-text">Estudiante de Ing. en Sistemas en el ITESO</p>
-            <button class="btn btn-primary btn-sm btn-gradient">Seguir</button>
-            <button class="btn btn-secondary btn-sm btn-gradient">Mensaje</button>
+            <p class="card-text">
+              Estudiante de Ing. en Sistemas en el ITESO
+            </p>
+            <button class="btn btn-primary btn-sm btn-gradient">
+              Seguir
+            </button>
+            <button class="btn btn-secondary btn-sm btn-gradient">
+              Mensaje
+            </button>
+            <!-- Sólo visible para el usuario, no para otros -->
+            <a href="#" class="btn btn-outline-primary btn-sm btn-ver-proyecto btn-gradient" data-toggle="modal"
+              data-target="#editBioModal">
+              <i class="fa fa-pencil"></i>
+              Editar
+            </a>
           </div>
         </div>
 
@@ -86,9 +108,7 @@
         </div>
       </div>
 
-
       <div class="col-md-8">
-
         <ul class="nav nav-tabs mb-3" id="myTab">
           <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#publicaciones">Publicaciones</a>
@@ -102,42 +122,66 @@
         </ul>
 
         <div class="tab-content">
-
           <div class="tab-pane fade show active" id="publicaciones">
-
             <div class="card mb-3">
               <div class="card-body">
-                <h6 class="card-title">Ya casi acabamos el proyecto esoo (no es verdad)</h6>  
-                <small class="text-muted">Emprendimiento: <span class="post-project-name">ITESO-Connect</span></small>
-                <span class="post-category-badge">Tecnología</span><br>
+                <h6 class="card-title">
+                  Ya casi acabamos el proyecto esoo (no es verdad)
+                </h6>
+                <small class="text-muted">Emprendimiento:
+                  <span class="post-project-name">
+                    <a href="#" data-toggle="modal" data-target="#projectModal" style="color: inherit">
+                      ITESO-Connect
+                    </a>
+                  </span></small>
+                <span class="post-category-badge">Tecnología</span><br />
                 <small class="text-muted">Neguib - 22 abril 2026</small>
-                <p class="card-text mt-2">Le metimos todo el fin de semana y ya esta bien usuarios, queedo fino vaya</p>
-                <button class="btn-apoyo" >
+                <p class="card-text mt-2">
+                  Le metimos todo el fin de semana y ya esta bien usuarios,
+                  queedo fino vaya
+                </p>
+                <button class="btn-apoyo">
                   <i class="fa fa-heart"></i>
-                  <span >Apoyar 48</span>
+                  <span>Apoyar 48</span>
                 </button>
                 <button class="btn-comentar" data-toggle="modal" data-target="#postModal">
                   <i class="fa fa-comment"></i>
-                    Comentar 12
+                  Comentar 12
                 </button>
+              <button class="btn-compartir">
+                <i class="fa fa-share"></i>
+                Compartir
+              </button>
               </div>
             </div>
 
             <div class="card mb-3">
               <div class="card-body">
                 <h6 class="card-title">Buscamos colaborador</h6>
-                <small class="text-muted">Emprendimiento: <span class="post-project-name">ITESO-Connect</span></small>
-                <span class="post-category-badge">Tecnología</span><br>
+                <small class="text-muted">Emprendimiento:
+                  <span class="post-project-name">
+                    <a href="#" data-toggle="modal" data-target="#projectModal" style="color: inherit">
+                      ITESO-Connect
+                    </a>
+                  </span></small>
+                <span class="post-category-badge">Tecnología</span><br />
                 <small class="text-muted">Neguib - 18 abril 2026</small>
-                <p class="card-text mt-2">Alguien que sepa hacer Fronend y quiera aprender, tenemos un proyecto y necesitamos gente. Manden mensaje.</p>
-                <button class="btn-apoyo" >
+                <p class="card-text mt-2">
+                  Alguien que sepa hacer Fronend y quiera aprender, tenemos un
+                  proyecto y necesitamos gente. Manden mensaje.
+                </p>
+                <button class="btn-apoyo">
                   <i class="fa fa-heart"></i>
-                  <span >Apoyar 31</span>
+                  <span>Apoyar 31</span>
                 </button>
                 <button class="btn-comentar" data-toggle="modal" data-target="#postModal">
                   <i class="fa fa-comment"></i>
-                    Comentar 7
+                  Comentar 7
                 </button>
+              <button class="btn-compartir">
+                <i class="fa fa-share"></i>
+                Compartir
+              </button>
               </div>
             </div>
 
@@ -145,31 +189,47 @@
               <div class="card-body">
                 <h6 class="card-title">La vida es bonita</h6>
                 <small class="text-muted"><span class="post-project-name"></span></small>
-                <span class="post-category-badge">No asociado</span><br>
+                <span class="post-category-badge">No asociado</span><br />
                 <small class="text-muted">Neguib - 10 abril 2026</small>
-                <p class="card-text mt-2">La neta es mejor empezar pronto el proyecto la uni ya se va a poner fea pero la vida es bonita.</p>
-                <button class="btn-apoyo"  >
+                <p class="card-text mt-2">
+                  La neta es mejor empezar pronto el proyecto la uni ya se va
+                  a poner fea pero la vida es bonita.
+                </p>
+                <button class="btn-apoyo">
                   <i class="fa fa-heart"></i>
-                  <span >Apoyar 102</span>
+                  <span>Apoyar 102</span>
                 </button>
                 <button class="btn-comentar" data-toggle="modal" data-target="#postModal">
                   <i class="fa fa-comment"></i>
-                    Comentar 23
+                  Comentar 23
                 </button>
+              <button class="btn-compartir">
+                <i class="fa fa-share"></i>
+                Compartir
+              </button>
               </div>
             </div>
-
           </div>
 
           <div class="tab-pane fade" id="proyectos">
-
+            <!-- Sólo visible para el usuario, no para otros -->
+            <div class="card mb-3" style="border: 0cap">
+              <a href="#" class="btn btn-outline-primary btn-sm btn-ver-proyecto btn-gradient" data-toggle="modal"
+                data-target="#createProjectModal">
+                + Crear nuevo Proyecto
+              </a>
+            </div>
             <div class="card mb-3">
               <div class="card-body">
                 <h5 class="card-title">ITESO Connect</h5>
-                <p class="card-text">Red social universitaria para conectar con universitarios del ITESO o colaboradores.</p>
+                <p class="card-text">
+                  Red social universitaria para conectar con universitarios
+                  del ITESO o colaboradores.
+                </p>
                 <p class="text-muted">Categoria: Tecnologia</p>
                 <p class="text-muted">Colaboradores: 4 - Apoyos: 87</p>
-                <a href="#" class="btn btn-outline-primary btn-sm btn-ver-proyecto btn-gradient" data-toggle="modal" data-target="#projectModal">
+                <a href="#" class="btn btn-outline-primary btn-sm btn-ver-proyecto btn-gradient" data-toggle="modal"
+                  data-target="#projectModal">
                   Ver proyecto
                 </a>
               </div>
@@ -178,22 +238,28 @@
             <div class="card mb-3">
               <div class="card-body">
                 <h5 class="card-title">Proyecto X</h5>
-                <p class="card-text">Monitoreo de la sustancia X en el campus con sensores radioactivos.</p>
+                <p class="card-text">
+                  Monitoreo de la sustancia X en el campus con sensores
+                  radioactivos.
+                </p>
                 <p class="text-muted">Categoria: Secreta</p>
                 <p class="text-muted">Colaboradores: 2 - Apoyos: 45</p>
-                <a href="#" class="btn btn-outline-primary btn-sm btn-ver-proyecto btn-gradient" data-toggle="modal" data-target="#projectModal">
+                <a href="#" class="btn btn-outline-primary btn-sm btn-ver-proyecto btn-gradient" data-toggle="modal"
+                  data-target="#projectModal">
                   Ver proyecto
                 </a>
               </div>
             </div>
-
           </div>
 
           <div class="tab-pane fade" id="biografia">
             <div class="card">
               <div class="card-body">
                 <h6 class="card-title">Sobre mi</h6>
-                <p class="card-text">Estudiante de Ingenieria en Sistemas en el ITESO. Me interesa el desarrollo web y aprender nuevas cosas.</p>
+                <p class="card-text">
+                  Estudiante de Ingenieria en Sistemas en el ITESO. Me
+                  interesa el desarrollo web y aprender nuevas cosas.
+                </p>
 
                 <h6 class="card-title mt-3">Proyecto mas apoyado</h6>
                 <p class="card-text">ITESO Connect - 87 apoyos</p>
@@ -203,25 +269,26 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
   </div>
 
   <!-- Modal de proyecto-->
-  <div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
+  <div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
-
         <div class="modal-header">
           <div>
             <span class="project-category-badge" id="modal-category">Tecnología</span>
             <h5 class="modal-title" id="projectModalLabel">ITESO-Connect</h5>
             <div class="project-author-line">
-              <img id="modal-author-avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkMe3CQgG-8Y3O69NCgn72tG2EyMVBbzEwHA&s" alt="autor">
-              <span>por <strong id="modal-author-name">@neguib.beltrán</strong></span>
+              <img id="modal-author-avatar"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkMe3CQgG-8Y3O69NCgn72tG2EyMVBbzEwHA&s"
+                alt="autor" />
+              <span>por
+                <strong id="modal-author-name">@neguib.beltrán</strong></span>
               <span>~</span>
               <span id="modal-date">82 de febrero del 200 A.C.</span>
             </div>
@@ -280,23 +347,32 @@
           <div class="tab-content" id="modal-tab-content">
             <div class="tab-pane fade show active" id="modal-pane-desc" role="tabpanel">
               <p class="project-section-label">Descripcion</p>
-              <p class="project-section-text" id="modal-descripcion">-</p>
+              <p class="project-section-text" id="modal-descripcion">
+                Somos la red social universitaria más grande de México!
+                Estamos buscando talento en Frontend que domine HTML, CSS y
+                Bootstrap.
+              </p>
 
               <div class="project-vision-grid">
                 <div class="project-vision-box">
                   <p class="project-section-label">Visión</p>
-                  <p class="project-section-text mb-0" id="modal-vision">-</p>
+                  <p class="project-section-text mb-0" id="modal-vision">
+                    Ejemplo de visión
+                  </p>
                 </div>
                 <div class="project-vision-box">
                   <p class="project-section-label">Misión</p>
-                  <p class="project-section-text mb-0" id="modal-mision">-</p>
+                  <p class="project-section-text mb-0" id="modal-mision">
+                    Ejemplo de misión
+                  </p>
                 </div>
               </div>
-              
+
               <div id="modal-desc">
                 <p class="project-section-text" id="modal-caracteristicas">
-                  Somos la red social universitaria más grande de México!
-                  Estamos buscando talento en Frontend que domine HTML, CSS y Bootstrap.
+                  - Idea basada en LinkedIn <br />
+                  - Enfoque 100% universitario <br />
+                  - Facilidad para conectar con compañeros que piensan igual
                 </p>
                 <!--Aquí serían las personas que colaboran en el proyecto-->
               </div>
@@ -304,30 +380,117 @@
 
             <div class="tab-pane fade" id="modal-pane-posts" role="tabpanel">
               <div id="modal-posts-list">
-                <!--Aquí serían las publicaciones del proyecto-->
+                <!--Lista de publicaciones del proyecto-->
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <h6 class="card-title">
+                      Ya casi acabamos el proyecto esoo (no es verdad)
+                    </h6>
+                    <small class="text-muted">Neguib - 22 abril 2026</small>
+                    <p class="card-text mt-2">
+                      Le metimos todo el fin de semana y ya esta bien
+                      usuarios, queedo fino vaya
+                    </p>
+                    <button class="btn-apoyo">
+                      <i class="fa fa-heart"></i>
+                      <span>Apoyar 48</span>
+                    </button>
+                    <button class="btn-comentar" data-toggle="" data-target="#">
+                      <i class="fa fa-comment"></i>
+                      Comentarios 12
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="tab-pane fade" id="modal-pane-team" role="tabpanel">
               <div id="modal-team-list">
                 <!--Aquí serían las personas que colaboran en el proyecto-->
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <img id="pm-author-avatar"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkMe3CQgG-8Y3O69NCgn72tG2EyMVBbzEwHA&s"
+                      class="rounded-circle mr-2" width="40" height="40" alt="autor" style="object-fit: cover" />
+                    <strong class="post-author-mr-2" id="colaboratorName">
+                      <a href="profile.html" style="color: black">
+                        Neguib Beltrán
+                      </a>
+                    </strong>
+                    <div class="flex-grow-1">
+                      <div class="d-flex align-items-center flex-wrap mb-1">
+                        <small class="text-muted">
+                          <span id="colabDate">
+                            Se unió el 8 de mayo del 2026.
+                          </span>
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <img id="pm-author-avatar"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkMe3CQgG-8Y3O69NCgn72tG2EyMVBbzEwHA&s"
+                      class="rounded-circle mr-2" width="40" height="40" alt="autor" style="object-fit: cover" />
+                    <strong class="post-author-mr-2" id="colaboratorName">
+                      <a href="profile.html" style="color: black">
+                        Omar Mares
+                      </a>
+                    </strong>
+                    <div class="flex-grow-1">
+                      <div class="d-flex align-items-center flex-wrap mb-1">
+                        <small class="text-muted">
+                          <span id="colabDate">
+                            Se unió el 8 de mayo del 2026.
+                          </span>
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="tab-pane fade" id="modal-pane-solicitudes" role="tabpanel">
               <div id="modal-solicitudes-list">
                 <!--Aquí serían las solicitudes de colaboración-->
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <img id="pm-author-avatar"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkMe3CQgG-8Y3O69NCgn72tG2EyMVBbzEwHA&s"
+                      class="rounded-circle mr-2" width="40" height="40" alt="autor" style="object-fit: cover" />
+                    <strong class="post-author-mr-2" id="colaboratorName">
+                      <a href="profile.html" style="color: inherit">
+                        Carlos Fulanito
+                      </a>
+                    </strong>
+                    <div class="flex-grow-1">
+                      <div class="d-flex align-items-center flex-wrap mb-1">
+                        <small class="text-muted">
+                          <span id="colabSolitudeMessage">
+                            Me encantaría trabajar en el proyecto! Domino AJAX
+                            y DOM.
+                          </span>
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-
           </div>
         </div>
 
         <div class="modal-footer">
           <div class="modal-footer-actions">
-            <button class="btn-apoyo" >
+            <button class="btn-apoyo">
               <i class="fa fa-heart"></i>
               <span>Apoyar</span>
+            </button>
+            <button class="btn-colab">
+              <i class="fa fa-users"></i>
+              <span>Colaborar</span>
             </button>
             <!--
             <div>
@@ -339,106 +502,103 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
   <!--Modal de detalle de publicación-->
-<div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="postModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
- 
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-          <i class="fa fa-times"></i>
-        </button>
-        <div class="post-modal-data d-flex align-items-start">
-          <img id="pm-author-avatar"
-               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkMe3CQgG-8Y3O69NCgn72tG2EyMVBbzEwHA&s"
-               class="rounded-circle mr-2" width="40" height="40" alt="autor" style="object-fit: cover;">
-               <div class="flex-grow-1">
-                <div class="d-flex align-items-center flex-wrap mb-1">
-                  
-                  <strong class="post-author mr-2" id="post-author-name">
-                    Neguib Beltrán
-                  </strong>
-                
-                <small class="text-muted">
-                  <small><span id="pm-date"> - 8 de mayo del 2026</span></small>
-                </small>
-                </div>
-                <small class="text-muted d-block">
-                  Emprendimiento:
-                  <span class="post-project-name" id="pm-project-name">
-                    ITESO-Connect
-                  </span>
-                  <span class="post-category-badge" id="pm-category">
-                    Tecnología
-                  </span>
-                </small>
-
-               </div>
-                 <a href="#" class="post-project-link d-none" id="pm-project-badge">
-                   <i class="fa fa-rocket"></i>
-                   <span>ITESO-Connect</span>
-                 </a>
-        </div>
-      </div>
- 
-      <div class="modal-body" id="pm-body">
-        <div id="pm-content" style=" flex:1;">
-          <!-- Texto de la publicación -->
-          <div class="post-modal-body-text" id="pm-text">
-            <p>Hola! Alguien que sepa hacer Front y quiera aprender?</p>
-          </div>
-          <img id="pm-media" class="post-modal-media d-none" src="" alt="media">
-          <div class="post-modal-actions">
-            <button class="btn-apoyo" >
-                <i class="fa fa-heart"></i>
-                <span >Apoyar 48</span>
-            </button>
-            <button class="btn-comentar">
-              <i class="fa fa-comment"></i>
-              Comentarios 12
-            </button>
-            <button class="btn-compartir">
-              <i class="fa fa-share"></i>
-              Compartir
-            </button>
-          </div>
-          <hr>
-          <!-- Lista de comentarios -->
-          <div class="post-comments-section">
-            <p class="post-comments-title">Comentarios</p>
-            <div id="pm-comments-list">
-
-            </div>
-          </div>
-        </div>
-      </div>
- 
-      <div class="modal-footer d-flex align-items-center gap-2" style="gap: 0.75rem;">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkMe3CQgG-8Y3O69NCgn72tG2EyMVBbzEwHA&s"
-             alt="yo" id="pm-my-avatar" class="rounded-circle" width="36" height="36" style="object-fit: cover; flex-shrink: 0;">
-          <input type="text" id="pm-comment-input" class="modal-input mb-0"
-                 placeholder="Escribe un comentario...">
-          <button class="btn-modal-primary" id="pm-send-btn" style="width: auto; margin:0; padding: .6rem 1rem;" disabled>
-            <i class="fa fa-paper-plane"></i>
-          </button>
-      </div>
- 
-    </div>
-  </div>
-  </div>
-  
-
-  <!-- Modal de Notificaciones -->
-  <div class="modal fade" id="notificationsModal" tabindex="-1" role="dialog" aria-labelledby="notificationsModalLabel" aria-hidden="true">
+  <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="postModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
             <i class="fa fa-times"></i>
+          </button>
+          <div class="post-modal-data d-flex align-items-start">
+            <img id="pm-author-avatar"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkMe3CQgG-8Y3O69NCgn72tG2EyMVBbzEwHA&s"
+              class="rounded-circle mr-2" width="40" height="40" alt="autor" style="object-fit: cover" />
+            <div class="flex-grow-1">
+              <div class="d-flex align-items-center flex-wrap mb-1">
+                <strong class="post-author mr-2" id="post-author-name">
+                  <a href="profile.html" style="color: inherit;">
+                    Neguib Beltrán
+                  </a>
+                </strong>
+
+                <small class="text-muted">
+                  <small><span id="pm-date"> - 8 de mayo del 2026</span></small>
+                </small>
+              </div>
+              <small class="text-muted d-block">
+                Emprendimiento:
+                <span class="post-project-name" id="pm-project-name">
+                  ITESO-Connect
+                </span>
+                <span class="post-category-badge" id="pm-category">
+                  Tecnología
+                </span>
+              </small>
+            </div>
+            <a href="#" class="post-project-link d-none" id="pm-project-badge">
+              <i class="fa fa-rocket"></i>
+              <span>ITESO-Connect</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="modal-body" id="pm-body">
+          <div id="pm-content" style="flex: 1">
+            <!-- Texto de la publicación -->
+            <div class="post-modal-body-text" id="pm-text">
+              <p>Hola! Alguien que sepa hacer Front y quiera aprender?</p>
+            </div>
+            <img id="pm-media" class="post-modal-media d-none" src="" alt="media" />
+            <div class="post-modal-actions">
+              <button class="btn-apoyo">
+                <i class="fa fa-heart"></i>
+                <span>Apoyar 48</span>
+              </button>
+              <button class="btn-comentar">
+                <i class="fa fa-comment"></i>
+                Comentarios 12
+              </button>
+              <button class="btn-compartir">
+                <i class="fa fa-share"></i>
+                Compartir
+              </button>
+            </div>
+            <hr />
+            <!-- Lista de comentarios -->
+            <div class="post-comments-section">
+              <p class="post-comments-title">Comentarios</p>
+              <div id="pm-comments-list"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer d-flex align-items-center gap-2" style="gap: 0.75rem">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkMe3CQgG-8Y3O69NCgn72tG2EyMVBbzEwHA&s"
+            alt="yo" id="pm-my-avatar" class="rounded-circle" width="36" height="36"
+            style="object-fit: cover; flex-shrink: 0" />
+          <input type="text" id="pm-comment-input" class="modal-input mb-0" placeholder="Escribe un comentario..." />
+          <button class="btn-modal-primary" id="pm-send-btn" style="width: auto; margin: 0; padding: 0.6rem 1rem"
+            disabled>
+            <i class="fa fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Notificaciones -->
+  <div class="modal fade" id="notificationsModal" tabindex="-1" role="dialog" aria-labelledby="notificationsModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="btn-close-modal" data-dismiss="modal" aria-label="Cerrar">
+            ×
           </button>
           <h5 class="modal-title" id="notificationsModalLabel">
             <i class="fa fa-bell mr-2"></i>Notificaciones
@@ -452,91 +612,109 @@
                   <i class="fa fa-heart text-danger"></i>
                 </div>
                 <div class="notification-content">
-                  <p class="mb-1">A <strong>María García</strong> le gustó tu publicación</p>
+                  <p class="mb-1">
+                    A <strong>María García</strong> le gustó tu publicación
+                  </p>
                   <small class="text-muted">Hace 5 minutos</small>
                 </div>
               </div>
             </div>
-            
+
             <div class="notification-item mb-3 pb-3 border-bottom">
               <div class="d-flex align-items-start">
                 <div class="notification-icon mr-3">
                   <i class="fa fa-user-plus text-primary"></i>
                 </div>
                 <div class="notification-content">
-                  <p class="mb-1"><strong>Carlos López</strong> comenzó a seguirte</p>
+                  <p class="mb-1">
+                    <strong>Carlos López</strong> comenzó a seguirte
+                  </p>
                   <small class="text-muted">Hace 30 minutos</small>
                 </div>
               </div>
             </div>
-            
+
             <div class="notification-item mb-3 pb-3 border-bottom">
               <div class="d-flex align-items-start">
                 <div class="notification-icon mr-3">
                   <i class="fa fa-comment text-success"></i>
                 </div>
                 <div class="notification-content">
-                  <p class="mb-1"><strong>Ana Martínez</strong> comentó en tu publicación</p>
+                  <p class="mb-1">
+                    <strong>Ana Martínez</strong> comentó en tu publicación
+                  </p>
                   <small class="text-muted">Hace 1 hora</small>
                 </div>
               </div>
             </div>
-            
+
             <div class="notification-item mb-3 pb-3 border-bottom">
               <div class="d-flex align-items-start">
                 <div class="notification-icon mr-3">
                   <i class="fa fa-heart text-danger"></i>
                 </div>
                 <div class="notification-content">
-                  <p class="mb-1">A <strong>Roberto Sánchez</strong> y 3 más les gustó tu proyecto</p>
+                  <p class="mb-1">
+                    A <strong>Roberto Sánchez</strong> y 3 más les gustó tu
+                    proyecto
+                  </p>
                   <small class="text-muted">Hace 2 horas</small>
                 </div>
               </div>
             </div>
-            
+
             <div class="notification-item mb-3 pb-3 border-bottom">
               <div class="d-flex align-items-start">
                 <div class="notification-icon mr-3">
                   <i class="fa fa-envelope text-warning"></i>
                 </div>
                 <div class="notification-content">
-                  <p class="mb-1"><strong>Laura Torres</strong> te envió un mensaje</p>
+                  <p class="mb-1">
+                    <strong>Laura Torres</strong> te envió un mensaje
+                  </p>
                   <small class="text-muted">Hace 3 horas</small>
                 </div>
               </div>
             </div>
-            
+
             <div class="notification-item mb-3 pb-3 border-bottom">
               <div class="d-flex align-items-start">
                 <div class="notification-icon mr-3">
                   <i class="fa fa-user-plus text-primary"></i>
                 </div>
                 <div class="notification-content">
-                  <p class="mb-1"><strong>Pedro Jiménez</strong> comenzó a seguirte</p>
+                  <p class="mb-1">
+                    <strong>Pedro Jiménez</strong> comenzó a seguirte
+                  </p>
                   <small class="text-muted">Hace 5 horas</small>
                 </div>
               </div>
             </div>
-            
+
             <div class="notification-item mb-3 pb-3 border-bottom">
               <div class="d-flex align-items-start">
                 <div class="notification-icon mr-3">
                   <i class="fa fa-heart text-danger"></i>
                 </div>
                 <div class="notification-content">
-                  <p class="mb-1">A <strong>Sofía Ramírez</strong> le gustó tu comentario</p>
+                  <p class="mb-1">
+                    A <strong>Sofía Ramírez</strong> le gustó tu comentario
+                  </p>
                   <small class="text-muted">Hace 8 horas</small>
                 </div>
               </div>
             </div>
-            
+
             <div class="notification-item mb-3">
               <div class="d-flex align-items-start">
                 <div class="notification-icon mr-3">
                   <i class="fa fa-comment text-success"></i>
                 </div>
                 <div class="notification-content">
-                  <p class="mb-1"><strong>Diego Hernández</strong> comentó en el proyecto ITESO-Connect</p>
+                  <p class="mb-1">
+                    <strong>Diego Hernández</strong> comentó en el proyecto
+                    ITESO-Connect
+                  </p>
                   <small class="text-muted">Hace 1 día</small>
                 </div>
               </div>
@@ -546,163 +724,294 @@
       </div>
     </div>
   </div>
-  
-<!-- Modal de Nueva Publicación -->
-<div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content">
-      
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-          <i class="fa fa-times"></i>
-        </button>
-        <h5 class="modal-title" id="newPostModalLabel">
-          <i class="fa fa-plus-circle mr-2"></i>Nueva Publicación
-        </h5>
-      </div>
-      
-      <div class="modal-body">
-        <form id="newPostForm">
-          
-          <!-- Título de la publicación -->
-          <div class="form-group">
-            <label for="postTitle" class="font-weight-bold">
-              <i class="fa fa-heading mr-1"></i>Título de la publicación
-            </label>
-            <input type="text" class="form-control" id="postTitle" 
-                   placeholder="Escribe un título llamativo para tu publicación" 
-                   maxlength="150" required>
-            <small class="text-muted">Máximo 150 caracteres</small>
-          </div>
-          
-          <!-- Descripción -->
-          <div class="form-group">
-            <label for="postDescription" class="font-weight-bold">
-              <i class="fa fa-align-left mr-1"></i>Descripción
-            </label>
-            <textarea class="form-control" id="postDescription" rows="5" 
-                      placeholder="Describe tu idea, avance o lo que quieras compartir con la comunidad..." 
-                      required></textarea>
-            <small class="text-muted">Puedes escribir todo lo necesario para expresar tu idea</small>
-          </div>
-          
-          <!-- Cargar imagen o video -->
-          <div class="form-group">
-            <label class="font-weight-bold">
-              <i class="fa fa-photo mr-1"></i>Imagen o Video
-            </label>
-            
-            <!-- Selector de tipo de medio -->
-            <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
-              <label class="btn btn-outline-secondary btn-sm active" id="label-none">
-                <input type="radio" name="mediaType" value="none" checked> 
-                <i class="fa fa-ban mr-1"></i>Ninguno
+
+  <!-- Modal de Nueva Publicación -->
+  <div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+            <i class="fa fa-times"></i>
+          </button>
+          <h5 class="modal-title" id="newPostModalLabel">
+            <i class="fa fa-plus-circle mr-2"></i>Nueva Publicación
+          </h5>
+        </div>
+
+        <div class="modal-body">
+          <form id="newPostForm">
+            <!-- Título de la publicación -->
+            <div class="form-group">
+              <label for="postTitle" class="font-weight-bold">
+                <i class="fa fa-heading mr-1"></i>Título de la publicación
               </label>
-              <label class="btn btn-outline-secondary btn-sm" id="label-image">
-                <input type="radio" name="mediaType" value="image"> 
-                <i class="fa fa-file-image-o mr-1"></i>Imagen
-              </label>
-              <label class="btn btn-outline-secondary btn-sm" id="label-video">
-                <input type="radio" name="mediaType" value="video"> 
-                <i class="fa fa-video-camera mr-1"></i>Video
-              </label>
+              <input type="text" class="form-control" id="postTitle"
+                placeholder="Escribe un título llamativo para tu publicación" maxlength="150" required />
+              <small class="text-muted">Máximo 150 caracteres</small>
             </div>
-            
-            <!-- Área para cargar imagen -->
-            <div id="imageUploadArea" style="display: none;">
-              <div class="custom-file mb-2">
-                <input type="file" class="custom-file-input" id="postImage" accept="image/*">
-                <label class="custom-file-label" for="postImage">
-                  <i class="fa fa-upload mr-1"></i>Seleccionar imagen
+
+            <!-- Descripción -->
+            <div class="form-group">
+              <label for="postDescription" class="font-weight-bold">
+                <i class="fa fa-align-left mr-1"></i>Descripción
+              </label>
+              <textarea class="form-control" id="postDescription" rows="5"
+                placeholder="Describe tu idea, avance o lo que quieras compartir con la comunidad..."
+                required></textarea>
+              <small class="text-muted">Puedes escribir todo lo necesario para expresar tu
+                idea</small>
+            </div>
+
+            <!-- Cargar imagen o video -->
+            <div class="form-group">
+              <div>
+                <label class="font-weight-bold">
+                  <i class="fa fa-photo mr-1"></i>¿Agregar imagen?
                 </label>
               </div>
-              <small class="text-muted d-block mb-2">Formatos aceptados: JPG, PNG, GIF. Tamaño máximo: 5MB</small>
-              
-              <!-- Previsualización de imagen -->
-              <div id="imagePreviewContainer" style="display: none;" class="text-center p-3 bg-light rounded">
-                <img id="imagePreview" src="" alt="Previsualización" 
-                     class="img-fluid rounded" style="max-height: 300px; object-fit: contain;">
-                <button type="button" class="btn btn-sm btn-outline-danger mt-2" id="removeImage">
-                  <i class="fa fa-trash mr-1"></i>Eliminar imagen
-                </button>
-              </div>
-            </div>
-            
-            <!-- Área para cargar video -->
-            <div id="videoUploadArea" style="display: none;">
-              <div class="custom-file mb-2">
-                <input type="file" class="custom-file-input" id="postVideo" accept="video/*">
-                <label class="custom-file-label" for="postVideo">
-                  <i class="fa fa-upload mr-1"></i>Seleccionar video
+
+              <!-- Selector de tipo de medio -->
+              <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
+                <label class="btn btn-outline-secondary btn-sm active" id="label-none">
+                  <input type="radio" name="mediaType" value="none" checked />
+                  <i class="fa fa-ban mr-1"></i>Ninguno
+                </label>
+                <label class="btn btn-outline-secondary btn-sm" id="label-image">
+                  <input type="radio" name="mediaType" value="image" />
+                  <i class="fa fa-file-image-o mr-1"></i>Imagen
                 </label>
               </div>
-              <small class="text-muted d-block mb-2">Formatos aceptados: MP4, WebM. Tamaño máximo: 50MB</small>
-              
-              <!-- Previsualización de video -->
-              <div id="videoPreviewContainer" style="display: none;" class="text-center p-3 bg-light rounded">
-                <video id="videoPreview" controls class="img-fluid rounded" style="max-height: 300px;">
-                  Tu navegador no soporta la reproducción de video.
-                </video>
-                <button type="button" class="btn btn-sm btn-outline-danger mt-2" id="removeVideo">
-                  <i class="fa fa-trash mr-1"></i>Eliminar video
-                </button>
+
+              <!-- Área para cargar imagen -->
+              <div id="imageUploadArea" style="display: none">
+                <div class="custom-file mb-2">
+                  <input type="file" class="custom-file-input" id="postImage" accept="image/*" />
+                  <label class="custom-file-label" for="postImage">
+                    <i class="fa fa-upload mr-1"></i>Seleccionar imagen
+                  </label>
+                </div>
+                <small class="text-muted d-block mb-2">Formatos aceptados: JPG, PNG, GIF. Tamaño máximo:
+                  5MB</small>
+
+                <!-- Previsualización de imagen -->
+                <div id="imagePreviewContainer" style="display: none" class="text-center p-3 bg-light rounded">
+                  <img id="imagePreview" src="" alt="Previsualización" class="img-fluid rounded"
+                    style="max-height: 300px; object-fit: contain" />
+                  <button type="button" class="btn btn-sm btn-outline-danger mt-2" id="removeImage">
+                    <i class="fa fa-trash mr-1"></i>Eliminar imagen
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          
-          <!-- Relacionar al proyecto -->
-          <div class="form-group">
-            <label for="projectSelect" class="font-weight-bold">
-              <i class="fa fa-rocket mr-1"></i>Relacionar con proyecto
-            </label>
-            <select class="form-control" id="projectSelect">
-              <option value="none" selected>Sin proyecto (publicación personal)</option>
-              <option value="1">ITESO-Connect</option>
-              <option value="2">Proyecto X</option>
-              <option value="3">Mi nuevo proyecto</option>
-            </select>
-            <small class="text-muted">
-              <i class="fa fa-info-circle mr-1"></i>
-              Relaciona tu publicación con un proyecto existente o publícala de forma personal
-            </small>
-          </div>
-          
-        </form>
-      </div>
-      
-      <div class="modal-footer">
-        <div class="d-flex justify-content-end w-100">
-          <div>
-            <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal">
-              <i class="fa fa-times mr-1"></i>Cancelar
-            </button>
-            <button type="submit" class="btn btn-modal-primary"style="width: auto; margin:0; padding: .6rem 1rem;" id="publishBtn">
-              <i class="fa fa-paper-plane mr-1"></i>Publicar
-            </button>
+
+            <!-- Relacionar al proyecto -->
+            <div class="form-group">
+              <label for="projectSelect" class="font-weight-bold">
+                <i class="fa fa-rocket mr-1"></i>Relacionar con proyecto
+              </label>
+              <select class="form-control" id="projectSelect">
+                <option value="none" selected>
+                  Sin proyecto (publicación personal)
+                </option>
+                <option value="1">ITESO-Connect</option>
+                <option value="2">Proyecto X</option>
+                <option value="3">Mi nuevo proyecto</option>
+              </select>
+              <small class="text-muted">
+                <i class="fa fa-info-circle mr-1"></i>
+                Relaciona tu publicación con un proyecto existente o publícala
+                de forma personal
+              </small>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <div class="d-flex justify-content-end w-100">
+            <div>
+              <button type="button" class="btn btn-modal-secondary" style="width: auto; margin: 0; padding: 0.6rem 1rem"
+                data-dismiss="modal">
+                <i class="fa fa-times mr-1"></i>Cancelar
+              </button>
+              <button type="submit" class="btn btn-modal-primary" style="width: auto; margin: 0; padding: 0.6rem 1rem"
+                id="publishBtn">
+                <i class="fa fa-paper-plane mr-1"></i>Publicar
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      
     </div>
   </div>
-</div>
+
+  <!--Modal para editar Biografía-->
+
+  <div class="modal fade" id="editBioModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h5 class="modal-title">Cuentanos sobre ti!</h5>
+        </div>
+        <div class="modal-body">
+          <!-- Foto de perfil -->
+          <p class="project-section-label">Foto de perfil</p>
+          <div class="modal-input-row">
+            <input type="text" class="modal-input" placeholder="URL de imagen (https://...)" />
+          </div>
+          <div class="custom-file mb-3">
+            <input type="file" class="custom-file-input" id="profileImageFile" accept="image/*" />
+            <label class="custom-file-label" for="profileImageFile">
+              <i class="fa fa-upload mr-1"></i>O sube un archivo
+            </label>
+          </div>
+
+          <!-- Nombre -->
+          <p class="project-section-label">Nombre completo</p>
+          <input type="text" class="modal-input" placeholder="Tu nombre completo" value="Neguib Zayed Beltran Zuno" />
+
+          <!-- Carrera y universidad -->
+          <div class="modal-input-row">
+            <input type="text" class="modal-input" placeholder="Carrera" value="Ing. en Sistemas" />
+            <input type="text" class="modal-input" placeholder="Universidad" value="ITESO" />
+          </div>
+
+          <!-- Ciudad -->
+          <p class="project-section-label">Ciudad</p>
+          <input type="text" class="modal-input" placeholder="Ciudad" value="Guadalajara" />
+
+          <!-- Habilidades -->
+          <p class="project-section-label">Habilidades</p>
+          <input type="text" class="modal-input" placeholder="Ej: HTML, CSS, JavaScript, Java, Git"
+            value="HTML, CSS, JavaScript, Java, Git" />
+          <small class="text-muted d-block mb-3">Separa cada habilidad con una coma</small>
+
+          <!-- Biografía (tarjeta de perfil) -->
+          <p class="project-section-label">
+            Biografía
+            <small class="text-muted">(aparece en tu tarjeta de perfil)</small>
+          </p>
+          <textarea class="modal-input" rows="2" placeholder="Una línea corta sobre ti...">
+Estudiante de Ing. en Sistemas en el ITESO</textarea>
+
+          <!-- Sobre mí (pestaña de biografía) -->
+          <p class="project-section-label">
+            Sobre mí
+            <small class="text-muted">(aparece en la pestaña Biografía)</small>
+          </p>
+          <textarea class="modal-input" rows="3" placeholder="Cuéntale a la comunidad quién eres...">
+Estudiante de Ingenieria en Sistemas en el ITESO. Me interesa el desarrollo web y aprender nuevas cosas.</textarea>
+        </div>
+        <div class="modal-footer">
+          <div class="d-flex justify-content-end w-100">
+            <div>
+              <button type="button" class="btn btn-modal-secondary" style="width: auto; margin: 0; padding: 0.6rem 1rem"
+                data-dismiss="modal">
+                <i class="fa fa-times mr-1"></i>Cancelar
+              </button>
+              <button type="submit" class="btn btn-modal-primary" style="width: auto; margin: 0; padding: 0.6rem 1rem"
+                id="saveBioBtn">
+                <i class="fa fa-save mr-1"></i>Guardar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal para crear proyecto -->
+  <div class="modal fade" id="createProjectModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h5 class="modal-title">Vuelve realidad tus ideas</h5>
+        </div>
+        <div class="modal-body">
+          <!-- Nombre -->
+          <p class="project-section-label">Nombre del proyecto</p>
+          <input type="text" class="modal-input" placeholder="Ej: ITESO-Connect" />
+
+          <!-- Categoría -->
+          <p class="project-section-label">Categoría</p>
+          <select class="modal-input" style="appearance: auto">
+            <option value="" disabled selected>
+              Selecciona una categoría
+            </option>
+            <option value="tecnologia">Tecnología</option>
+            <option value="sustentabilidad">Sustentabilidad</option>
+            <option value="educacion">Educación</option>
+            <option value="salud">Salud</option>
+            <option value="arte">Arte y Cultura</option>
+            <option value="social">Impacto Social</option>
+            <option value="otro">Otro</option>
+          </select>
+
+          <!-- Descripción -->
+          <p class="project-section-label">Descripción</p>
+          <textarea class="modal-input" rows="3"
+            placeholder="¿De qué trata tu proyecto? Descríbelo de forma clara y atractiva..."></textarea>
+
+          <!-- Visión y misión -->
+          <div class="modal-input-row">
+            <div style="flex: 1">
+              <p class="project-section-label">Visión</p>
+              <textarea class="modal-input mb-0" rows="3"
+                placeholder="¿A dónde quieres llegar con este proyecto?"></textarea>
+            </div>
+            <div style="flex: 1">
+              <p class="project-section-label">Misión</p>
+              <textarea class="modal-input mb-0" rows="3"
+                placeholder="¿Cuál es el propósito que guía tu proyecto día a día?"></textarea>
+            </div>
+          </div>
+
+          <!-- Características -->
+          <p class="project-section-label mt-3">Características</p>
+          <textarea class="modal-input" rows="3"
+            placeholder="¿Qué hace especial a tu proyecto? Lista sus principales características..."></textarea>
+        </div>
+        <div class="modal-footer">
+          <div class="d-flex justify-content-end w-100">
+            <div>
+              <button type="button" class="btn btn-modal-secondary" style="width: auto; margin: 0; padding: 0.6rem 1rem"
+                data-dismiss="modal">
+                <i class="fa fa-times mr-1"></i>Cancelar
+              </button>
+              <button type="submit" class="btn btn-modal-primary" style="width: auto; margin: 0; padding: 0.6rem 1rem"
+                id="saveBioBtn">
+                <i class="fa fa-save mr-1"></i>Guardar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <footer>
     <div>
       <span class="brand-badge-footer">IC</span>
       <span class="footer-brand-name">ITESO-Connect</span>
     </div>
-    <p>© 2026 ITESO-Connect. La red social para emprendedores universitarios.</p>
+    <p>
+      © 2026 ITESO-Connect. La red social para emprendedores universitarios.
+    </p>
   </footer>
-  
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-  </body>
-  
+</body>
+
 </html>

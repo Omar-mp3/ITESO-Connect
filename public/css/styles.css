@@ -85,9 +85,6 @@ h1, h2, h3, h4, h5, .brand-name {
   padding: .4rem 1rem !important;
 }
 
-/* ─── Botones de gradiente (navbar, perfil, feed) ─── */
-/* Unificado: btn-nav-register, btn-nav-publish y btn-gradient
-   comparten la misma base visual */
 .btn-nav-register,
 .btn-nav-publish,
 .btn-gradient {
@@ -469,6 +466,20 @@ footer p {
 
 .btn-modal-primary:hover { opacity: .9; color: #fff; }
 
+.btn-modal-secondary {
+  background: var(--gray-text);
+  color: #fff;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: .95rem;
+  padding: .75rem 1.5rem;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  margin-bottom: 1rem; 
+}
+
+.btn-modal-secondary:hover { opacity: .9; color: #fff; }
 .modal-switch {
   font-size: .85rem;
   color: var(--gray-text);
@@ -879,11 +890,10 @@ footer p {
 
 .modal-footer-actions { display: flex; gap: 0.5rem; }
 
-/* ─── Botones de acción (apoyo / comentar / compartir) ─── */
-/* Unificados: btn-apoyo, btn-comentar, btn-compartir comparten base */
 .btn-apoyo,
 .btn-comentar,
-.btn-compartir {
+.btn-compartir,
+.btn-colab {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.85rem;
   border-radius: 20px;
@@ -905,12 +915,18 @@ footer p {
   color: #e74c3c;
 }
 
-.btn-comentar:hover {
+.btn-comentar:hover,
+.btn-compartir:hover {
   background: #f0f4ff;
   border-color: #1a1a2e;
   color: #1a1a2e;
 }
 
+.btn-colab:hover {
+  background: var(--purple-light);
+  border-color: var(--purple-dark);
+  color: var(--purple-dark);
+}
 .btn-ver-perfil-proyecto {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.82rem;
@@ -957,19 +973,14 @@ footer p {
 .contacts li { list-style: none; padding: 10px; border-bottom: 1px solid #f0f0f0; cursor: pointer; }
 .contacts li.active { background-color: var(--purple-light); }
 
-#notificationsModal .modal-title {
+#notificationsModal .modal-title,
+#newPostModal .modal-title,
+#editBioModal .modal-title,
+#createProjectModal .modal-title {
   font-family: 'Sora', sans-serif;
   font-weight: 700;
   font-size: 1.35rem;
   color: var(--purple);
   margin: 0 0 0.35rem;
   line-height: 1.3; 
-}
-#newPostModal .modal-title {
-  font-family: 'Sora', sans-serif;
-  font-weight: 700;
-  font-size: 1.35rem;
-  color: var(--purple);
-  margin: 0 0 0.35rem;
-  line-height: 1.3;  
 }
