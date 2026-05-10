@@ -1,1 +1,9 @@
 .vscode/
+
+.npm
+
+node_modules/
+
+checklist.md
+
+package-lock.json
