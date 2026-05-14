@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 
-let esquemaUsuario = mongoose.Schema({
+const userSchema = new mongoose.Schema({
     expediente: {
-        type: Number,
-        required: true
+        type: String,
+        required: true,
+        unique: true
     },
     nombreUsuario: {
         type: String,
@@ -22,30 +23,18 @@ let esquemaUsuario = mongoose.Schema({
         type: String,
         required: true
     },
-    token: {
+    nombre: String,
+    rol: {
         type: String,
-        required: true
-    },
-    nombre: {
-        type: String,
-        required: true
-    },
-    fechaNacimiento: Date,
-    fechaRegistro: {
-        type: Date,
-        default: Date.now
+        enum: ['USUARIO', 'ADMIN'],
+        default: 'USUARIO'
     },
     fotoPerfil: String,
     biografia: String,
-    rol: {
-        type: String,
-        enum: ['ADMIN', 'USUARIO'],
-        default: 'USUARIO'
-    },
-    seguidores: [{ type: mongoose.Schema.Types.ObjectId, ref: 'usuario' }],
-    siguiendo: [{ type: mongoose.Schema.Types.ObjectId, ref: 'usuario' }]
-});
+    habilidades: [String],
+    seguidores: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+    siguiendo: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+    proyectos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Project' }]
+}, { timestamps: true });
 
-let Usuario = mongoose.model('usuario', esquemaUsuario);
-
-module.exports = Usuario;
+module.exports = mongoose.model('User', userSchema);

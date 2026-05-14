@@ -16,9 +16,8 @@ let esquemaPublicacion = mongoose.Schema({
     },
     fecha: Date,
     apoyos: [mongoose.Schema.Types.ObjectId],
-    compartidos: Number,
+    comentarios: [mongoose.Schema.Types.ObjectId],
     imagen: String,
-    video: String
 });
 
 let Publicacion = mongoose.model('publicacion', esquemaPublicacion);

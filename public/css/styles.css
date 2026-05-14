@@ -892,7 +892,6 @@ footer p {
 
 .btn-apoyo,
 .btn-comentar,
-.btn-compartir,
 .btn-colab {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.85rem;
@@ -915,8 +914,7 @@ footer p {
   color: #e74c3c;
 }
 
-.btn-comentar:hover,
-.btn-compartir:hover {
+.btn-comentar:hover{
   background: #f0f4ff;
   border-color: #1a1a2e;
   color: #1a1a2e;

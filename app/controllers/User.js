@@ -1,4 +1,6 @@
 "use strict";
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 const Usuario = require('../models/User');
 // /usuarios -GET
@@ -28,10 +30,11 @@ async function obtenerUsuario(req, res) {
 async function crearUsuario(req, res) {
     try {
         // Filtrar datos sensibles y asignar rol por defecto
-        const { expediente, nombreUsuario, correo, contrasena, nombre } = req.body;
-        let nuevoUsuario = new Usuario({ expediente, nombreUsuario, correo, contrasena, nombre });
-        
+        const { expediente, nombreUsuario, correo, contrasena, nombre, rol } = req.body;
+        const hashedPassword = await bcrypt.hash(contrasena, 10); // Hashear la contraseña
+        let nuevoUsuario = new Usuario({ expediente, nombreUsuario, correo, contrasena: hashedPassword, nombre, rol: rol || 'USUARIO' }); // Asignar rol por defecto
         await nuevoUsuario.save();
+
         res.status(201).json({ mensaje: 'Usuario creado' });
     } catch (error) {
         res.status(500).json({ mensaje: 'Error al crear usuario' });
@@ -70,4 +73,28 @@ async function cambiarRol(req, res) {
     }
 }
 
-module.exports = { obtenerUsuarios, obtenerUsuario, crearUsuario, editarUsuario, eliminarUsuario, cambiarRol };
+// Función de login
+async function login(req, res) {
+    try {
+        const { correo, contrasena } = req.body;
+        const usuario = await Usuario.findOne({ correo });
+
+        if (!usuario) {
+            return res.status(400).json({ mensaje: 'Credenciales inválidas' });
+        }
+
+        const isMatch = await bcrypt.compare(contrasena, usuario.contrasena);
+
+        if (!isMatch) {
+            return res.status(400).json({ mensaje: 'Credenciales inválidas' });
+        }
+
+        const token = jwt.sign({ id: usuario._id, rol: usuario.rol }, process.env.JWT_SECRET, { expiresIn: '1h' });
+
+        res.status(200).json({ token, usuario: { id: usuario._id, nombreUsuario: usuario.nombreUsuario, rol: usuario.rol } });
+    } catch (error) {
+        res.status(500).json({ mensaje: 'Error en el servidor' });
+    }
+}
+
+module.exports = { obtenerUsuarios, obtenerUsuario, crearUsuario, editarUsuario, eliminarUsuario, cambiarRol, login };
