@@ -213,15 +213,40 @@ async function openProjectModal(projectId) {
         setTextById('modal-vision', p.vision || 'Sin visión definida.');
         setTextById('modal-mision', p.mision || 'Sin misión definida.');
 
-        // Contar publicaciones del proyecto
+        // Publicaciones del proyecto en su pestaña específica
+        const postsList = document.getElementById('modal-posts-list');
+        if (postsList) postsList.innerHTML = '<div class="text-center py-4"><i class="fa fa-spinner fa-spin"></i></div>';
+
         try {
             const postsRes = await authFetch(`/posts?limit=100`);
             if (postsRes.ok) {
                 const postsData = await postsRes.json();
-                const count = (postsData.publicaciones || []).filter(post => post.proyecto?._id === p._id || post.proyecto === p._id).length;
-                setTextById('modal-publicaciones', count);
+                const projectPosts = (postsData.publicaciones || []).filter(post => (post.proyecto?._id || post.proyecto) === p._id);
+                setTextById('modal-publicaciones', projectPosts.length);
+
+                if (postsList) {
+                    if (projectPosts.length === 0) {
+                        postsList.innerHTML = '<p class="text-muted text-center py-4">Este proyecto aún no tiene publicaciones asociadas.</p>';
+                    } else {
+                        postsList.innerHTML = projectPosts.map(post => `
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h6 class="card-title font-weight-bold mb-1">${escH(post.titulo || 'Publicación')}</h6>
+                                    <p class="card-text mb-2">${escH(post.cuerpo)}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">${post.fecha ? new Date(post.fecha).toLocaleDateString('es-MX') : ''}</small>
+                                        <button class="btn btn-link btn-sm p-0" style="color:var(--purple);" onclick="$('#projectModal').modal('hide'); setTimeout(() => loadPostDetails('${post._id}','${escH(post.usuario?.nombre || '')}','','${post.fecha ? new Date(post.fecha).toLocaleDateString('es-MX') : ''}'), 400)">Ver detalle</button>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('');
+                    }
+                }
             }
-        } catch (e) { setTextById('modal-publicaciones', 0); }
+        } catch (e) { 
+            setTextById('modal-publicaciones', 0);
+            if (postsList) postsList.innerHTML = '<p class="text-danger text-center">Error al cargar publicaciones.</p>';
+        }
 
         const avatar = document.getElementById('modal-author-avatar');
         if (avatar) {
