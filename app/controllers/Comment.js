@@ -23,7 +23,7 @@ async function crearComentario(req, res) {
 
 
 // /comentarios/:id -DELETE
-// Sólo disponible para admin y dueño
+
 async function eliminarComentario(req, res) {
     try {
         let comentario = await Comentario.findByIdAndDelete(req.params.id);

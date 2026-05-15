@@ -31,10 +31,15 @@ const userSchema = new mongoose.Schema({
     },
     fotoPerfil: String,
     biografia: String,
+    sobreMi:   String,
     habilidades: [String],
-    seguidores: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-    siguiendo: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-    proyectos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Project' }]
+    carrera:     String,
+    universidad: String,
+    ciudad:      String,
+    fechaRegistro: Date,
+    seguidores: [{ type: mongoose.Schema.Types.ObjectId, ref: 'usuario' }],
+    siguiendo:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'usuario' }],
+    proyectos:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'proyecto' }]
 }, { timestamps: true });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('usuario', userSchema);

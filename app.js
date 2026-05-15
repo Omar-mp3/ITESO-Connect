@@ -22,6 +22,20 @@ app.use(express.static(path.join(__dirname, 'app/views')));
 
 app.use('/', router);
 
+// Manejo de errores 404
+app.use((req, res) => {
+    res.status(404).sendFile(path.join(__dirname, 'app/views/error.html'));
+});
+
+// Manejador global de errores (500)
+app.use((err, req, res, next) => {
+    console.error('SERVER_ERROR_TRACE:', err.stack);
+    res.status(500).json({ 
+        mensaje: 'Ocurrió un error en el servidor al procesar la solicitud',
+        error: err.message 
+    });
+});
+
 app.listen(port, () => {
     console.log(`Servidor escuchando en el puerto ${port}`);
 });

@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <title>Admin - ITESO Connect</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/styles.css">
+  <style>
+    .admin-header { background: linear-gradient(135deg,#1A1A2E,#4F46E5); color:#fff; padding:2rem; border-radius:16px; margin-bottom:2rem; }
+    .admin-header h2 { font-family:'Sora',sans-serif; font-weight:800; margin:0; }
+    .admin-header p { margin:0; opacity:.8; }
+    .section-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem; flex-wrap:wrap; gap:.5rem; }
+    .search-bar { display:flex; gap:.5rem; flex:1; max-width:360px; }
+    .search-bar input { border:1.5px solid #E5E7EB; border-radius:10px; padding:.5rem 1rem; font-size:.9rem; flex:1; }
+    .search-bar button { background:var(--blue-grad); color:#fff; border:none; border-radius:10px; padding:.5rem 1rem; cursor:pointer; }
+    .badge-admin { background: linear-gradient(135deg,#ef4444,#dc2626); color:#fff; font-size:.65rem; padding:2px 8px; border-radius:20px; font-weight:700; }
+    .badge-user  { background:#E5E7EB; color:#555; font-size:.65rem; padding:2px 8px; border-radius:20px; font-weight:700; }
+    .tab-admin { font-family:'DM Sans',sans-serif; }
+    .tab-admin .nav-link { color:#888; border:none; border-bottom:2px solid transparent; border-radius:0; padding:.6rem 1.2rem; }
+    .tab-admin .nav-link.active { color: var(--purple); border-bottom-color: var(--purple); font-weight:600; }
+    .btn-del-sm { background:transparent; border:1.5px solid #ef4444; color:#ef4444; border-radius:20px; padding:3px 10px; font-size:.8rem; cursor:pointer; }
+    .btn-del-sm:hover { background:#ef4444; color:#fff; }
+    .btn-promote { background:transparent; border:1.5px solid var(--purple); color:var(--purple); border-radius:20px; padding:3px 10px; font-size:.8rem; cursor:pointer; }
+    .btn-promote:hover { background:var(--purple); color:#fff; }
+    .stats-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:1rem; margin-bottom:1.5rem; }
+    .stat-box { background:#fff; border:1px solid #E5E7EB; border-radius:12px; padding:1rem; text-align:center; }
+    .stat-box .num { font-family:'Sora',sans-serif; font-size:2rem; font-weight:800; color:var(--purple); }
+    .stat-box .lbl { font-size:.75rem; color:#888; text-transform:uppercase; letter-spacing:.05em; }
+    .pagination-bar { display:flex; gap:.5rem; justify-content:center; margin-top:1rem; flex-wrap:wrap; }
+    .page-btn { border:1.5px solid #E5E7EB; background:#fff; border-radius:8px; padding:5px 12px; cursor:pointer; font-size:.85rem; }
+    .page-btn.active { background:var(--blue-grad); color:#fff; border-color:transparent; }
+    .page-btn:hover:not(.active) { border-color:var(--purple); color:var(--purple); }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="user-feed.html">
+        <span class="brand-badge">IC</span><strong>ITESO-Connect</strong>
+      </a>
+      <div class="ml-auto d-flex align-items-center">
+        <span class="badge-admin mr-3"><i class="fa fa-shield"></i> ADMIN</span>
+        <a href="user-feed.html" class="nav-link mr-2"><i class="fa fa-home"></i></a>
+        <a href="#" data-logout class="nav-link text-danger">Cerrar sesión</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4 mb-5">
+    <div class="admin-header">
+      <h2><i class="fa fa-shield mr-2"></i>Panel de Administrador</h2>
+      <p>Gestiona usuarios, publicaciones y proyectos de ITESO-Connect</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row" id="stats-row">
+      <div class="stat-box"><div class="num" id="stat-users">-</div><div class="lbl">Usuarios</div></div>
+      <div class="stat-box"><div class="num" id="stat-posts">-</div><div class="lbl">Publicaciones</div></div>
+      <div class="stat-box"><div class="num" id="stat-projects">-</div><div class="lbl">Proyectos</div></div>
+    </div>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs tab-admin mb-3" id="adminTabs">
+      <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#tab-users"><i class="fa fa-users mr-1"></i>Usuarios</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab-posts"><i class="fa fa-file-text mr-1"></i>Publicaciones</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab-projects"><i class="fa fa-rocket mr-1"></i>Proyectos</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <!-- USUARIOS -->
+      <div class="tab-pane fade show active" id="tab-users">
+        <div class="section-header">
+          <h5 class="mb-0">Gestión de Usuarios</h5>
+          <div class="search-bar">
+            <input type="text" id="search-users" placeholder="Buscar usuario...">
+            <button onclick="searchUsers()"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead><tr><th>Nombre</th><th>Usuario</th><th>Correo</th><th>Rol</th><th>Acciones</th></tr></thead>
+            <tbody id="users-table-body"><tr><td colspan="5" class="text-center text-muted">Cargando...</td></tr></tbody>
+          </table>
+        </div>
+        <div class="pagination-bar" id="users-pagination"></div>
+      </div>
+
+      <!-- PUBLICACIONES -->
+      <div class="tab-pane fade" id="tab-posts">
+        <div class="section-header">
+          <h5 class="mb-0">Gestión de Publicaciones</h5>
+          <div class="search-bar">
+            <input type="text" id="search-posts" placeholder="Buscar publicación...">
+            <button onclick="searchPosts()"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead><tr><th>Autor</th><th>Contenido</th><th>Apoyos</th><th>Fecha</th><th>Acciones</th></tr></thead>
+            <tbody id="posts-table-body"><tr><td colspan="5" class="text-center text-muted">Cargando...</td></tr></tbody>
+          </table>
+        </div>
+        <div class="pagination-bar" id="posts-pagination"></div>
+      </div>
+
+      <!-- PROYECTOS -->
+      <div class="tab-pane fade" id="tab-projects">
+        <div class="section-header">
+          <h5 class="mb-0">Gestión de Proyectos</h5>
+          <div class="search-bar">
+            <input type="text" id="search-projects" placeholder="Buscar proyecto...">
+            <button onclick="searchProjects()"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead><tr><th>Nombre</th><th>Categoría</th><th>Dueño</th><th>Colaboradores</th><th>Apoyos</th><th>Acciones</th></tr></thead>
+            <tbody id="projects-table-body"><tr><td colspan="6" class="text-center text-muted">Cargando...</td></tr></tbody>
+          </table>
+        </div>
+        <div class="pagination-bar" id="projects-pagination"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div><span class="brand-badge-footer">IC</span><span class="footer-brand-name">ITESO-Connect</span></div>
+    <p>© 2026 ITESO-Connect. Panel de Administrador.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="/public/js/auth.js"></script>
+  <script>
+  "use strict";
+  let usersPage=1, postsPage=1, projectsPage=1;
+  let usersSearch='', postsSearch='', projectsSearch='';
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    if(!requireAuth()) return;
+    const user = getUser();
+    if(!user || user.rol !== 'ADMIN'){
+      alert('Acceso denegado. Solo administradores.');
+      window.location.href='user-feed.html'; return;
+    }
+    initLogoutButtons();
+    await Promise.all([loadStats(), loadUsers(), loadPosts(), loadProjects()]);
+  });
+
+  async function loadStats(){
+    try {
+      const [u,p,pr] = await Promise.all([
+        authFetch('/usuarios?limit=1').then(r=>r.json()),
+        authFetch('/posts?limit=1').then(r=>r.json()),
+        authFetch('/proyectos?limit=1').then(r=>r.json())
+      ]);
+      document.getElementById('stat-users').textContent = u.total || 0;
+      document.getElementById('stat-posts').textContent = p.total || 0;
+      document.getElementById('stat-projects').textContent = pr.total || 0;
+    } catch(e){ console.error(e); }
+  }
+
+  function escH(str){ return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  async function loadUsers(page=1, search=''){
+    usersPage=page; usersSearch=search;
+    const tbody = document.getElementById('users-table-body');
+    tbody.innerHTML='<tr><td colspan="5" class="text-center text-muted"><i class="fa fa-spinner fa-spin"></i> Cargando...</td></tr>';
+    try {
+      const res = await authFetch('/usuarios?page='+page+'&limit=10&search='+encodeURIComponent(search));
+      const data = await res.json();
+      const users = data.usuarios || [];
+      if(!users.length){ tbody.innerHTML='<tr><td colspan="5" class="text-center text-muted">Sin usuarios</td></tr>'; return; }
+      tbody.innerHTML = users.map(u => `
+        <tr>
+          <td><strong>${escH(u.nombre)}</strong></td>
+          <td>@${escH(u.nombreUsuario)}</td>
+          <td>${escH(u.correo)}</td>
+          <td><span class="${u.rol==='ADMIN'?'badge-admin':'badge-user'}">${u.rol}</span></td>
+          <td>
+            ${u.rol!=='ADMIN'?`<button class="btn-promote mr-1" onclick="promoteUser('${u._id}')"><i class="fa fa-arrow-up"></i> Admin</button>`:''}
+            <button class="btn-del-sm" onclick="deleteUser('${u._id}','${escH(u.nombre)}')"><i class="fa fa-trash"></i> Eliminar</button>
+          </td>
+        </tr>`).join('');
+      renderPagination('users-pagination', data.page, data.pages, (p)=>loadUsers(p,usersSearch));
+    } catch(e){ tbody.innerHTML='<tr><td colspan="5" class="text-danger">Error al cargar usuarios</td></tr>'; }
+  }
+
+  async function loadPosts(page=1, search=''){
+    postsPage=page; postsSearch=search;
+    const tbody = document.getElementById('posts-table-body');
+    tbody.innerHTML='<tr><td colspan="5" class="text-center text-muted"><i class="fa fa-spinner fa-spin"></i> Cargando...</td></tr>';
+    try {
+      const res = await authFetch('/posts?page='+page+'&limit=10&search='+encodeURIComponent(search));
+      const data = await res.json();
+      const posts = data.publicaciones || [];
+      if(!posts.length){ tbody.innerHTML='<tr><td colspan="5" class="text-center text-muted">Sin publicaciones</td></tr>'; return; }
+      tbody.innerHTML = posts.map(p => `
+        <tr>
+          <td>${escH(p.usuario?.nombre||'?')}</td>
+          <td>${escH((p.cuerpo||'').substring(0,80))}${p.cuerpo&&p.cuerpo.length>80?'...':''}</td>
+          <td>${p.apoyos?p.apoyos.length:0}</td>
+          <td>${p.fecha?new Date(p.fecha).toLocaleDateString('es-MX'):''}</td>
+          <td><button class="btn-del-sm" onclick="deletePost('${p._id}')"><i class="fa fa-trash"></i> Eliminar</button></td>
+        </tr>`).join('');
+      renderPagination('posts-pagination', data.page, data.pages, (p)=>loadPosts(p,postsSearch));
+    } catch(e){ tbody.innerHTML='<tr><td colspan="5" class="text-danger">Error al cargar publicaciones</td></tr>'; }
+  }
+
+  async function loadProjects(page=1, search=''){
+    projectsPage=page; projectsSearch=search;
+    const tbody = document.getElementById('projects-table-body');
+    tbody.innerHTML='<tr><td colspan="6" class="text-center text-muted"><i class="fa fa-spinner fa-spin"></i> Cargando...</td></tr>';
+    try {
+      const res = await authFetch('/proyectos?page='+page+'&limit=10&search='+encodeURIComponent(search));
+      const data = await res.json();
+      const projs = data.proyectos || [];
+      if(!projs.length){ tbody.innerHTML='<tr><td colspan="6" class="text-center text-muted">Sin proyectos</td></tr>'; return; }
+      tbody.innerHTML = projs.map(p => `
+        <tr>
+          <td><strong>${escH(p.nombre)}</strong></td>
+          <td>${escH(p.categoria)}</td>
+          <td>${escH(p.dueno?.nombre||'?')}</td>
+          <td>${p.colaboradores?p.colaboradores.length:0}</td>
+          <td>${p.apoyos?p.apoyos.length:0}</td>
+          <td><button class="btn-del-sm" onclick="deleteProject('${p._id}','${escH(p.nombre)}')"><i class="fa fa-trash"></i> Eliminar</button></td>
+        </tr>`).join('');
+      renderPagination('projects-pagination', data.page, data.pages, (p)=>loadProjects(p,projectsSearch));
+    } catch(e){ tbody.innerHTML='<tr><td colspan="6" class="text-danger">Error al cargar proyectos</td></tr>'; }
+  }
+
+  function renderPagination(containerId, currentPage, totalPages, onPage){
+    const container = document.getElementById(containerId);
+    if(!container || totalPages <= 1){ if(container) container.innerHTML=''; return; }
+    let html = '';
+    for(let i=1; i<=totalPages; i++){
+      html += `<button class="page-btn${i===currentPage?' active':''}" onclick="(${onPage.toString()})(${i})">${i}</button>`;
+    }
+    container.innerHTML = html;
+  }
+
+  function searchUsers(){ loadUsers(1, document.getElementById('search-users').value.trim()); }
+  function searchPosts(){ loadPosts(1, document.getElementById('search-posts').value.trim()); }
+  function searchProjects(){ loadProjects(1, document.getElementById('search-projects').value.trim()); }
+
+  // Enter key en búsquedas
+  document.addEventListener('DOMContentLoaded', ()=>{
+    document.getElementById('search-users')?.addEventListener('keydown', e=>{ if(e.key==='Enter') searchUsers(); });
+    document.getElementById('search-posts')?.addEventListener('keydown', e=>{ if(e.key==='Enter') searchPosts(); });
+    document.getElementById('search-projects')?.addEventListener('keydown', e=>{ if(e.key==='Enter') searchProjects(); });
+  });
+
+  async function deleteUser(id, nombre){
+    if(!confirm(`¿Eliminar al usuario "${nombre}"? Esta acción no se puede deshacer.`)) return;
+    try {
+      const res = await authFetch('/usuarios/'+id, {method:'DELETE'});
+      if(res.ok){ loadUsers(usersPage,usersSearch); loadStats(); }
+      else { const d=await res.json(); alert(d.mensaje||'Error'); }
+    } catch(e){ alert('Error de conexión'); }
+  }
+
+  async function promoteUser(id){
+    if(!confirm('¿Promover este usuario a ADMIN?')) return;
+    try {
+      const res = await authFetch('/usuarios/'+id+'/rol', {method:'PUT', body:JSON.stringify({rol:'ADMIN'})});
+      if(res.ok){ loadUsers(usersPage,usersSearch); }
+      else { const d=await res.json(); alert(d.mensaje||'Error'); }
+    } catch(e){ alert('Error de conexión'); }
+  }
+
+  async function deletePost(id){
+    if(!confirm('¿Eliminar esta publicación?')) return;
+    try {
+      const res = await authFetch('/posts/'+id, {method:'DELETE'});
+      if(res.ok){ loadPosts(postsPage,postsSearch); loadStats(); }
+      else { const d=await res.json(); alert(d.mensaje||'Error'); }
+    } catch(e){ alert('Error de conexión'); }
+  }
+
+  async function deleteProject(id, nombre){
+    if(!confirm(`¿Eliminar el proyecto "${nombre}"?`)) return;
+    try {
+      const res = await authFetch('/proyectos/'+id, {method:'DELETE'});
+      if(res.ok){ loadProjects(projectsPage,projectsSearch); loadStats(); }
+      else { const d=await res.json(); alert(d.mensaje||'Error'); }
+    } catch(e){ alert('Error de conexión'); }
+  }
+  </script>
+</body>
+</html>

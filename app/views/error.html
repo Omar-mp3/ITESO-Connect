@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Error - ITESO Connect</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body class="bg-light d-flex align-items-center" style="min-height: 100vh;">
+    <div class="container text-center">
+        <div class="card shadow-sm p-5" style="border-radius: var(--card-radius);">
+            <h1 class="display-4 text-danger font-weight-bold">¡Ups!</h1>
+            <p class="lead mb-4" id="error-msg">Parece que algo no salió como esperábamos en el sistema.</p>
+            <div class="mb-4">
+                <span class="brand-badge mx-auto" style="width: 60px; height: 60px; font-size: 1.5rem;">IC</span>
+            </div>
+            <a href="user-feed.html" class="btn btn-gradient px-4">Volver al inicio</a>
+        </div>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        if(params.has('msg')) {
+            document.getElementById('error-msg').textContent = params.get('msg');
+        }
+    </script>
+</body>
+</html>

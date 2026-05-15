@@ -1,25 +1,50 @@
 "use strict";
 
 const router = require('express').Router();
+const path   = require('path');
 const userRouter = require('../routes/users');
 const postRouter = require('../routes/posts');
-const authMiddleware = require('../middleware/auth'); // Importar el middleware de autenticación
-const userController = require('./User'); // Para la función de login
-const commentRouter = require('../routes/comments');
+const projectRouter= require('../routes/projects');
+const commentRouter= require('../routes/comments');
 const messageRouter= require('../routes/messages');
+const adminRouter= require('../routes/admin');
+const collabRouter = require('../routes/collaborations');
 
-// --- Usuarios ---
-router.use('/usuarios', userRouter); 
+const authMiddleware  = require('../middleware/auth');
+const userController  = require('./User');
 
-// --- Posts ---
-router.use('/posts', postRouter);
-router.post('/posts', authMiddleware, postRouter); // Ejemplo: proteger la creación de posts
+// Auth
+router.post('/login', userController.login);
 
-// --- Comentarios ---
-router.use('/comentarios', commentRouter);
+// Usuarios 
+router.use('/usuarios', userRouter);
 
-// --- Mensajes / conversaciones ---
-router.use('/mensajes', authMiddleware, messageRouter); // Ejemplo: proteger rutas de mensajes
+// Posts
+router.use('/posts', authMiddleware, postRouter);
 
-router.post('/login', userController.login); // Ruta para el login
+// Proyectos
+router.use('/proyectos', authMiddleware, projectRouter);
+
+// Comentarios
+router.use('/comentarios', authMiddleware, commentRouter);
+
+// Mensajes 
+router.use('/mensajes', authMiddleware, messageRouter);
+
+// Solicitudes
+router.use('/', authMiddleware, collabRouter);   
+
+// Admin
+router.use('/admin', adminRouter);
+
+// Vistas
+const viewsPath = path.join(__dirname, '../views');
+router.get('/',(req, res) => res.sendFile(path.join(viewsPath, 'home.html')));
+router.get('/home.html', (req, res) => res.sendFile(path.join(viewsPath, 'home.html')));
+router.get('/user-feed.html', (req, res) => res.sendFile(path.join(viewsPath, 'user-feed.html')));
+router.get('/profile.html',(req, res) => res.sendFile(path.join(viewsPath, 'profile.html')));
+router.get('/inbox.html', (req, res) => res.sendFile(path.join(viewsPath, 'inbox.html')));
+router.get('/admin.html', (req, res) => res.sendFile(path.join(viewsPath, 'admin.html')));
+router.get('/error.html',(req, res) => res.sendFile(path.join(viewsPath, 'error.html')));
+
 module.exports = router;

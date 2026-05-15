@@ -13,11 +13,17 @@ let esquemaProyecto = mongoose.Schema({
         type: String,
         required: true
     },
+    vision: { type: String, default: '' },
+    mision: { type: String, default: '' },
     dueno: {
         type: mongoose.Schema.Types.ObjectId,
+        ref: 'usuario',
         required: true
     },
-    colaboradores: [mongoose.Schema.Types.ObjectId],
+    colaboradores: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'usuario'
+    }],
     apoyos: [mongoose.Schema.Types.ObjectId],
     fechaCreacion: Date
 });

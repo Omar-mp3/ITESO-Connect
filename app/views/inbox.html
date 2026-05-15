@@ -1,29 +1,30 @@
-
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Mensajes - ITESO Connect</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Mensajes - ITESO Connect</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Tu CSS Personalizado -->
-    <link rel="stylesheet" href="/public/css/styles.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/styles.css">
 
 </head>
 
 <body>
-    <!-- Navbar del Perfil -->
+  <!-- Navbar del Perfil -->
   <nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="user-feed.html">
@@ -36,345 +37,70 @@
 
       <div class="collapse navbar-collapse" id="navPrincipal">
         <ul class="navbar-nav ml-auto align-items-center">
-          <li class="nav-item">
-            <a class="nav-link btn btn-gradient btn-sm px-3 text-white mr-lg-3" href="#" data-toggle="modal" data-target="#newPostModal">+ Nueva publicación</a>
-          </li>
-          <li class="nav-item px-2"><a class="nav-link" href="#" data-toggle="modal" data-target="#notificationsModal"><i class="fa fa-bell"></i></a></li>
           <li class="nav-item px-2"><a class="nav-link" href="inbox.html"><i class="fa fa-comment"></i></a></li>
           <li class="nav-item px-2"><a class="nav-link" href="profile.html"><i class="fa fa-user"></i></a></li>
-          <li class="nav-item pl-lg-3"><a class="nav-link text-danger" href="home.html">Cerrar sesión</a></li>
+          <li class="nav-item" id="admin-link" style="display:none"><a class="nav-link" href="admin.html"><i
+                class="fa fa-shield"></i></a></li>
+          <li class="nav-item pl-lg-3"><a class="nav-link text-danger" href="#" data-logout>Cerrar sesión</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-    <!-- Contenedor Principal (Integración de Bandeja de Entrada) -->
-    <div class="container-fluid chat-container">
-        <div class="row justify-content-center h-100">
-            
-            <!-- Lista de Contactos -->
-            <div class="col-md-4 col-xl-3 chat">
-                <div class="card mb-sm-3 mb-md-0 contacts_card">
-                    <div class="card-header">
-                        <div class="input-group">
-                            <input type="text" placeholder="Buscar usuario..." class="form-control search">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text search_btn"><i class="fa fa-search"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body contacts_body">
-                        <ul class="contacts p-0">
-                            <li class="active">
-                                <div class="d-flex bd-highlight">
-                                    <div class="img-cont">
-                                        <img src="https://ui-avatars.com/api/?name=Omar&background=7C3AED&color=fff">
-                                    </div>
-                                    <div class="user-info">
-                                        <span>Omar</span>
-                                        <p class="small text-muted">En línea</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="d-flex bd-highlight">
-                                    <div class="img-cont">
-                                        <img src="https://ui-avatars.com/api/?name=Sofia&background=4F46E5&color=fff">
-                                    </div>
-                                    <div class="user-info">
-                                        <span>Sofía</span>
-                                        <p class="small text-muted">Visto hace 5m</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-footer"></div>
-                </div>
-            </div>
+  <!-- Contenedor Principal (Integración de Bandeja de Entrada) -->
+  <div class="container-fluid chat-container">
+    <div class="row justify-content-center h-100">
 
-            <!-- Ventana de Chat -->
-            <div class="col-md-8 col-xl-6 chat">
-                <div class="card">
-                    <div class="card-header msg-head">
-                        <div class="d-flex bd-highlight align-items-center">
-                            <div class="img-cont">
-                                <img src="https://ui-avatars.com/api/?name=Omar&background=7C3AED&color=fff">
-                            </div>
-                            <div class="user-info">
-                                <span class="font-weight-bold">Chat con Omar</span>
-                                <p class="mb-0 small text-muted">421 Mensajes</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card-body msg-card-body overflow-auto" style="max-height: 60vh;">
-                        <!-- Mensaje Recibido -->
-                        <div class="d-flex justify-content-start mb-4">
-                            <div class="img-cont-msg mr-2">
-                                <img src="https://ui-avatars.com/api/?name=Omar" class="rounded-circle" width="35">
-                            </div>
-                            <div class="msg-container bg-light p-2 rounded">
-                                Hola, cómo andamos?
-                                <span class="msg-time d-block small text-muted">8:40 AM, Hoy</span>
-                            </div>
-                        </div>
-
-                        <!-- Mensaje Enviado -->
-                        <div class="d-flex justify-content-end mb-4">
-                            <div class="msg-container-send bg-primary text-white p-2 rounded">
-                                Holaaa, todo bien, y tú?
-                                <span class="msg-time-send d-block small text-white-50">8:55 AM, Hoy</span>
-                            </div>
-                        </div>
-                    </div>
-
-      <div class="card-footer d-flex align-items-center gap-2" style="gap: 0.75rem;">
-          <input type="text" id="pm-comment-input" class="modal-input mb-0"
-                 placeholder="Escribe un mensaje...">
-          <button class="btn-modal-primary" id="pm-send-btn" style="width: auto; margin:0; padding: .6rem 1rem;" disabled>
-            <i class="fa fa-paper-plane"></i>
-          </button>
-      </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-  <!-- Modal de Notificaciones -->
-  <div class="modal fade" id="notificationsModal" tabindex="-1" role="dialog" aria-labelledby="notificationsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-            <i class="fa fa-times"></i>
-          </button>
-          <h5 class="modal-title" id="notificationsModalLabel">
-            <i class="fa fa-bell mr-2"></i>Notificaciones
-          </h5>
-        </div>
-        <div class="modal-body">
-          <div class="notifications-list">
-            <div class="notification-item mb-3 pb-3 border-bottom">
-              <div class="d-flex align-items-start">
-                <div class="notification-icon mr-3">
-                  <i class="fa fa-heart text-danger"></i>
-                </div>
-                <div class="notification-content">
-                  <p class="mb-1">A <strong>María García</strong> le gustó tu publicación</p>
-                  <small class="text-muted">Hace 5 minutos</small>
-                </div>
-              </div>
-            </div>
-            
-            <div class="notification-item mb-3 pb-3 border-bottom">
-              <div class="d-flex align-items-start">
-                <div class="notification-icon mr-3">
-                  <i class="fa fa-user-plus text-primary"></i>
-                </div>
-                <div class="notification-content">
-                  <p class="mb-1"><strong>Carlos López</strong> comenzó a seguirte</p>
-                  <small class="text-muted">Hace 30 minutos</small>
-                </div>
-              </div>
-            </div>
-            
-            <div class="notification-item mb-3 pb-3 border-bottom">
-              <div class="d-flex align-items-start">
-                <div class="notification-icon mr-3">
-                  <i class="fa fa-comment text-success"></i>
-                </div>
-                <div class="notification-content">
-                  <p class="mb-1"><strong>Ana Martínez</strong> comentó en tu publicación</p>
-                  <small class="text-muted">Hace 1 hora</small>
-                </div>
-              </div>
-            </div>
-            
-            <div class="notification-item mb-3 pb-3 border-bottom">
-              <div class="d-flex align-items-start">
-                <div class="notification-icon mr-3">
-                  <i class="fa fa-heart text-danger"></i>
-                </div>
-                <div class="notification-content">
-                  <p class="mb-1">A <strong>Roberto Sánchez</strong> y 3 más les gustó tu proyecto</p>
-                  <small class="text-muted">Hace 2 horas</small>
-                </div>
-              </div>
-            </div>
-            
-            <div class="notification-item mb-3 pb-3 border-bottom">
-              <div class="d-flex align-items-start">
-                <div class="notification-icon mr-3">
-                  <i class="fa fa-envelope text-warning"></i>
-                </div>
-                <div class="notification-content">
-                  <p class="mb-1"><strong>Laura Torres</strong> te envió un mensaje</p>
-                  <small class="text-muted">Hace 3 horas</small>
-                </div>
-              </div>
-            </div>
-            
-            <div class="notification-item mb-3 pb-3 border-bottom">
-              <div class="d-flex align-items-start">
-                <div class="notification-icon mr-3">
-                  <i class="fa fa-user-plus text-primary"></i>
-                </div>
-                <div class="notification-content">
-                  <p class="mb-1"><strong>Pedro Jiménez</strong> comenzó a seguirte</p>
-                  <small class="text-muted">Hace 5 horas</small>
-                </div>
-              </div>
-            </div>
-            
-            <div class="notification-item mb-3 pb-3 border-bottom">
-              <div class="d-flex align-items-start">
-                <div class="notification-icon mr-3">
-                  <i class="fa fa-heart text-danger"></i>
-                </div>
-                <div class="notification-content">
-                  <p class="mb-1">A <strong>Sofía Ramírez</strong> le gustó tu comentario</p>
-                  <small class="text-muted">Hace 8 horas</small>
-                </div>
-              </div>
-            </div>
-            
-            <div class="notification-item mb-3">
-              <div class="d-flex align-items-start">
-                <div class="notification-icon mr-3">
-                  <i class="fa fa-comment text-success"></i>
-                </div>
-                <div class="notification-content">
-                  <p class="mb-1"><strong>Diego Hernández</strong> comentó en el proyecto ITESO-Connect</p>
-                  <small class="text-muted">Hace 1 día</small>
-                </div>
+      <!-- Lista de Contactos -->
+      <div class="col-md-4 col-xl-3 chat">
+        <div class="card mb-sm-3 mb-md-0 contacts_card">
+          <div class="card-header">
+            <div class="input-group">
+              <input type="text" id="user-search" placeholder="Buscar usuario..." class="form-control search">
+              <div class="input-group-prepend">
+                <span class="input-group-text search_btn"><i class="fa fa-search"></i></span>
               </div>
             </div>
           </div>
+          <div class="card-body contacts_body">
+            <ul class="contacts p-0">
+              <!--Contactos, opcional-->
+            </ul>
+          </div>
+          <div class="card-footer"></div>
         </div>
       </div>
-    </div>
-  </div>
-  
-  <!--Modal de nueva publocación-->
-  <div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-            <i class="fa fa-times"></i>
-          </button>
-          <h5 class="modal-title" id="newPostModalLabel">
-            <i class="fa fa-plus-circle mr-2"></i>Nueva Publicación
-          </h5>
-        </div>
 
-        <div class="modal-body">
-          <form id="newPostForm">
-            <!-- Título de la publicación -->
-            <div class="form-group">
-              <label for="postTitle" class="font-weight-bold">
-                <i class="fa fa-heading mr-1"></i>Título de la publicación
-              </label>
-              <input type="text" class="form-control" id="postTitle"
-                placeholder="Escribe un título llamativo para tu publicación" maxlength="150" required />
-              <small class="text-muted">Máximo 150 caracteres</small>
-            </div>
-
-            <!-- Descripción -->
-            <div class="form-group">
-              <label for="postDescription" class="font-weight-bold">
-                <i class="fa fa-align-left mr-1"></i>Descripción
-              </label>
-              <textarea class="form-control" id="postDescription" rows="5"
-                placeholder="Describe tu idea, avance o lo que quieras compartir con la comunidad..."
-                required></textarea>
-              <small class="text-muted">Puedes escribir todo lo necesario para expresar tu
-                idea</small>
-            </div>
-
-            <!-- Cargar imagen o video -->
-            <div class="form-group">
-              <div>
-                <label class="font-weight-bold">
-                  <i class="fa fa-photo mr-1"></i>¿Agregar imagen?
-                </label>
+      <!-- Ventana de Chat -->
+      <div class="col-md-8 col-xl-6 chat">
+        <div class="card">
+          <div class="card-header msg-head">
+            <div class="d-flex bd-highlight align-items-center">
+              <div class="img-cont mr-2">
+                <img src="https://ui-avatars.com/api/?name=?&background=7C3AED&color=fff" class="rounded-circle"
+                  width="40" height="40" id="chat-header-avatar">
               </div>
-
-              <!-- Selector de tipo de medio -->
-              <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
-                <label class="btn btn-outline-secondary btn-sm active" id="label-none">
-                  <input type="radio" name="mediaType" value="none" checked />
-                  <i class="fa fa-ban mr-1"></i>Ninguno
-                </label>
-                <label class="btn btn-outline-secondary btn-sm" id="label-image">
-                  <input type="radio" name="mediaType" value="image" />
-                  <i class="fa fa-file-image-o mr-1"></i>Imagen
-                </label>
-              </div>
-
-              <!-- Área para cargar imagen -->
-              <div id="imageUploadArea" style="display: none">
-                <div class="custom-file mb-2">
-                  <input type="file" class="custom-file-input" id="postImage" accept="image/*" />
-                  <label class="custom-file-label" for="postImage">
-                    <i class="fa fa-upload mr-1"></i>Seleccionar imagen
-                  </label>
-                </div>
-                <small class="text-muted d-block mb-2">Formatos aceptados: JPG, PNG, GIF. Tamaño máximo:
-                  5MB</small>
-
-                <!-- Previsualización de imagen -->
-                <div id="imagePreviewContainer" style="display: none" class="text-center p-3 bg-light rounded">
-                  <img id="imagePreview" src="" alt="Previsualización" class="img-fluid rounded"
-                    style="max-height: 300px; object-fit: contain" />
-                  <button type="button" class="btn btn-sm btn-outline-danger mt-2" id="removeImage">
-                    <i class="fa fa-trash mr-1"></i>Eliminar imagen
-                  </button>
-                </div>
+              <div class="user-info">
+                <span class="font-weight-bold" id="chat-header-name">Selecciona una conversación</span>
+                <p class="mb-0 small text-muted" id="chat-header-sub">Busca un usuario para empezar</p>
               </div>
             </div>
+          </div>
 
-            <!-- Relacionar al proyecto -->
-            <div class="form-group">
-              <label for="projectSelect" class="font-weight-bold">
-                <i class="fa fa-rocket mr-1"></i>Relacionar con proyecto
-              </label>
-              <select class="form-control" id="projectSelect">
-                <option value="none" selected>
-                  Sin proyecto (publicación personal)
-                </option>
-                <option value="1">ITESO-Connect</option>
-                <option value="2">Proyecto X</option>
-                <option value="3">Mi nuevo proyecto</option>
-              </select>
-              <small class="text-muted">
-                <i class="fa fa-info-circle mr-1"></i>
-                Relaciona tu publicación con un proyecto existente o publícala
-                de forma personal
-              </small>
-            </div>
-          </form>
-        </div>
+          <div class="card-body msg-card-body overflow-auto" style="max-height: 60vh;">
+            <p class="text-center text-muted py-5">Selecciona una conversación o busca un usuario para comenzar.</p>
+          </div>
 
-        <div class="modal-footer">
-          <div class="d-flex justify-content-end w-100">
-            <div>
-              <button type="button" class="btn btn-modal-secondary" style="width: auto; margin: 0; padding: 0.6rem 1rem"
-                data-dismiss="modal">
-                <i class="fa fa-times mr-1"></i>Cancelar
-              </button>
-              <button type="submit" class="btn btn-modal-primary" style="width: auto; margin: 0; padding: 0.6rem 1rem"
-                id="publishBtn">
-                <i class="fa fa-paper-plane mr-1"></i>Publicar
-              </button>
-            </div>
+          <div class="card-footer d-flex align-items-center gap-2" style="gap: 0.75rem;">
+            <input type="text" id="pm-comment-input" class="modal-input mb-0" placeholder="Escribe un mensaje...">
+            <button class="btn-modal-primary" id="pm-send-btn" style="width: auto; margin:0; padding: .6rem 1rem;"
+              disabled>
+              <i class="fa fa-paper-plane"></i>
+            </button>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -385,9 +111,12 @@
     </div>
     <p>© 2026 ITESO-Connect. La red social para emprendedores universitarios.</p>
   </footer>
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="/public/js/auth.js"></script>
+  <script src="/public/js/messages.js"></script>
 </body>
+
 </html>

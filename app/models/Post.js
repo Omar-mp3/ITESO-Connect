@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 let esquemaPublicacion = mongoose.Schema({
+    titulo: {
+        type: String,
+        default: ''
+    },
     cuerpo: {
         type: String,
         required: true
@@ -16,7 +20,7 @@ let esquemaPublicacion = mongoose.Schema({
     },
     fecha: Date,
     apoyos: [mongoose.Schema.Types.ObjectId],
-    comentarios: [mongoose.Schema.Types.ObjectId],
+    comentarios: [{ type: mongoose.Schema.Types.ObjectId, ref: 'comentario' }],
     imagen: String,
 });
 
